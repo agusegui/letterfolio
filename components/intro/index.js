@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import s from './intro.module.scss'
 
 const DISPLAY = 'HELLO'
-const DISPLAY2 = 'ALO'
+const DISPLAY2 = 'ALO!'
 const DISPLAY3 = 'HOLA'
 
 export const Intro = () => {
@@ -63,7 +63,7 @@ export const Intro = () => {
     setTimeout(() => {
       // setIsLoaded(true)
       setIntroOut(true)
-    }, 5000)
+    }, 1000)
   }, [])
 
   useEffect(() => {

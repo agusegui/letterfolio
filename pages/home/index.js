@@ -128,7 +128,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div style={{ height: '100vh' }} id="rect">
+        <div id="rect">
           <div
             ref={(node) => {
               setRef(node)
@@ -138,9 +138,10 @@ export default function Home() {
               position: 'fixed',
               right: '0',
               bottom: '0',
-              width: '96px',
+              width: '192px',
               height: '96px',
               fontSize: '16px',
+              textAlign: 'center',
               // backgroundColor: 'black',
               color: 'black',
             }}

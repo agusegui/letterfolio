@@ -192,12 +192,12 @@ function Board() {
 
     refe.current.parent.position.y = progress
     refe.current.children.map((e) => {
-      e.rotation.x = (Math.PI * -progress * 0.001 * velocity) / 2
+      e.rotation.x = Math.PI * -progress * 0.001 * velocity * 0.2
     })
   })
   return (
     <>
-      <group ref={refe} position={[0, 0, -1]}>
+      <group ref={refe} position={[0, -2, -1]}>
         <Poster url="/1.png" position={[-1.15, -2, -0.01]} scale={0.6} />
         <Poster url="/2.png" position={[-1.15, -4, -0.01]} scale={0.6} />
         <Poster url="/3.png" position={[-1.15, -6, -0.01]} scale={0.6} />

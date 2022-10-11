@@ -16,7 +16,8 @@
     border-radius: 100%;
     width: 40px;
     height: 40px;
-    background-color: var(--black);
+    // background-color: var(--black);
+    border: solid black;
     opacity: 0.4;
     transition: transform 600ms var(--ease-out-expo);
 

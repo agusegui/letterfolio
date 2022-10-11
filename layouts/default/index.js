@@ -8,6 +8,7 @@ import cn from 'clsx'
 import { Cursor } from 'components/cursor'
 import { CustomHead } from 'components/custom-head'
 import { Footer } from 'components/footer'
+import { Header } from 'components/header'
 import { Intro } from 'components/intro'
 import { Scrollbar } from 'components/scrollbar'
 import { useStore } from 'lib/store'
@@ -30,7 +31,7 @@ export function Layout({
   useLayoutEffect(() => {
     if (isTouchDevice === undefined) return
     window.scrollTo(0, 0)
-    const lenis = new Lenis({ lerp: 0.08, smooth: !isTouchDevice })
+    const lenis = new Lenis({ lerp: 0.06, smooth: !isTouchDevice })
     setLenis(lenis)
 
     return () => {
@@ -95,7 +96,7 @@ export function Layout({
         <Intro />
         {isTouchDevice === false && <Cursor />}
         {isTouchDevice === false && <Scrollbar />}
-        {/* <Header ref={ref} /> */}
+        <Header ref={ref} />
         <main className={s.main}>{children}</main>
         <Footer />
       </div>

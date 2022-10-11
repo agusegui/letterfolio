@@ -120,8 +120,11 @@ void main() {
   vNormal = normal;
 
   vec3 newPos = position;
-  float elv = 0.1;
- float elevation = sin(newPos.y * newPos.x * 2.) * elv;
+  // uProgress = 1.;
+  newPos.y += uProgress * 0.1;
+  float elv = 0.9;
+  elv *= uProgress;
+ float elevation = sin(newPos.y * newPos.x  ) * elv;
 
  for(float i = 1.; i <= 4.; i++) {
   elevation -= abs(cnoise(vec3(sin(newPos.x * 8. * i), newPos.y * 3. * i, uProgress * 2.)) * 0.04 / i);
@@ -233,11 +236,11 @@ export function Demo({ tl, speed = 1 }) {
   //   tl.to(
   //     matRef.current.uniforms.uProgress,
   //     {
-  //       value: 3,
+  //       value: 1,
   //       duration: 2,
   //       ease: 'expo.out',
   //     },
-  //     4
+  //     2
   //   )
   // })
 
@@ -276,8 +279,8 @@ export function Demo({ tl, speed = 1 }) {
   return (
     <>
       <mesh
-        scale={0.77}
-        position={[0.066, 0.02, 0]}
+        scale={0.83}
+        position={[0.09, 0.07, 0]}
         // onClick={(e) => console.log('click')}
         // onPointerOver={(e) => console.log('hover')}
         // onPointerOut={(e) => console.log('unhover')}
