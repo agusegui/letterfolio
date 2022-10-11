@@ -1,0 +1,25 @@
+.navigation {
+  pointer-events: all;
+  height: 0;
+  background-color: var(--theme-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 1s height var(--ease-out-expo);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  &.closed {
+    pointer-events: none;
+    height: 0;
+
+    > * {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.hero {
+  width: 100%;
+  display: flex;
+  height: 540px;
+  position: relative;
+  inset: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  z-index: 0;
+
+  .title {
+    display: flex;
+    // align-items: center;
+    // text-align: center;
+    // justify-items: center;
+    border-top: solid 1px var(--shadow);
+    border-bottom: solid 1px var(--shadow);
+    position: absolute;
+    // left: 50%;
+    // transform: scaleY(0);
+    // transform: translateX(-50%);
+    will-change: transform;
+    // transform: translateY(100%);
+
+    height: 100%;
+    width: 100%;
+    font-family: AsBlackDisk;
+    font-size: 666px;
+    line-height: 81%;
+    letter-spacing: -0.03em;
+    overflow: hidden;
+    // transform: translateY(10%);
+    .cha {
+      transform: translateY(100%);
+      // color: red;
+    }
+  }
+
+  .canvas {
+    width: 100%;
+    height: 100%;
+    width: 540px;
+  }
+}

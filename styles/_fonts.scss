@@ -1,0 +1,71 @@
+// HERE WE DEFINE FONT-FACES, I.E.:
+@font-face {
+  font-family: 'Inter var';
+  src: url('/fonts/inter-var.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AsBlackDisk';
+  src: url('/fonts/as-black-disk.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AsBlack';
+  src: url('/fonts/asblack.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'As Noir';
+  src: url('/fonts/as-noir.woff2') format('woff2');
+  font-display: swap;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-gray {
+  color: var(--gray);
+}
+.text-shadow {
+  color: var(--shadow);
+}
+.text-noir {
+  color: var(--noir);
+}
+.text-dark {
+  color: var(--dark);
+}
+
+.truncate {
+  max-width: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inter {
+  font-family: 'Inter';
+}
+.caps {
+  font-family: 'As-Noir', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+.display {
+  font-family: 'AsBlackDisk', Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 100%;
+}
+
+// @font-face {
+//   font-family: 'DecoGroteske';
+//   src: url('/fonts/neuenoir.woff2') format('woff2');
+//   font-display: swap;
+//   font-weight: 400;
+// }
