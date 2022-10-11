@@ -4,11 +4,17 @@
 
 .scrollbar {
   position: fixed;
-  right: 0;
+  right: 192px;
   bottom: 0;
   top: 0;
   z-index: 10;
   padding: desktop-vw(24px) 0;
+  font-family: 'Parclo Serif';
+  font-size: 192px;
+  text-align: center;
+  border-right: solid 1px var(--gray);
+  color: var(--gray);
+  mix-blend-mode: multiply;
 
   .inner {
     height: 100%;
@@ -16,13 +22,13 @@
   }
 
   .thumb {
-    min-height: desktop-vw(48px);
+    // min-height: desktop-vw(48px);
     width: desktop-vw(8px);
-    background-color: var(--red);
+    // background-color: var(--gray);
     position: absolute;
-    right: desktop-vw(8px);
-    border-radius: desktop-vw(4px);
-    border: desktop-vw(1px) solid var(--black);
+    right: desktop-vw(24px);
+    // border-radius: desktop-vw(4px);
+    // border: desktop-vw(1px) solid var(--black);
     cursor: grab;
   }
 }

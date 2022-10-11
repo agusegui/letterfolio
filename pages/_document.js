@@ -7,14 +7,21 @@ export default function Document() {
       <Head>
         <meta charSet="UTF-8" />
         <link
-          href="/fonts/pokepixel.woff2"
+          href="/fonts/psr.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="/fonts/inter-var.woff2"
+          href="/fonts/psb.woff2"
+          as="font"
+          rel="preload prefetch"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="/fonts/psf.woff2"
           as="font"
           rel="preload prefetch"
           type="font/woff2"
@@ -22,21 +29,7 @@ export default function Document() {
         />
         <link
           rel="preload prefetch"
-          href="/fonts/asblack.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload prefetch"
-          href="/fonts/as-black-disk.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload prefetch"
-          href="/fonts/as-noir.woff2"
+          href="/fonts/psfb.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

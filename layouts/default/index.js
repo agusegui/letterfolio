@@ -8,7 +8,6 @@ import cn from 'clsx'
 import { Cursor } from 'components/cursor'
 import { CustomHead } from 'components/custom-head'
 import { Footer } from 'components/footer'
-import { Header } from 'components/header'
 import { Intro } from 'components/intro'
 import { Scrollbar } from 'components/scrollbar'
 import { useStore } from 'lib/store'
@@ -96,7 +95,7 @@ export function Layout({
         <Intro />
         {isTouchDevice === false && <Cursor />}
         {isTouchDevice === false && <Scrollbar />}
-        <Header ref={ref} />
+        {/* <Header ref={ref} /> */}
         <main className={s.main}>{children}</main>
         <Footer />
       </div>

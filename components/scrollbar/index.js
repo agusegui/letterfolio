@@ -71,7 +71,9 @@ export function Scrollbar({}) {
           onPointerDown={() => {
             setClicked(true)
           }}
-        />
+        >
+          I
+        </div>
       </div>
     </div>
   )

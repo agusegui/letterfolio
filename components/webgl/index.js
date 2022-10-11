@@ -1,20 +1,16 @@
 import { Text } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
 import {
   useFrame,
   useIsTouchDevice,
   useLayoutEffect,
 } from '@studio-freight/hamo'
-import clsx from 'clsx'
 import gsap from 'gsap'
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useRef } from 'react'
 import { useWindowSize } from 'react-use'
 import { Color, DoubleSide, Vector2 } from 'three'
-import s from './webgl.module.scss'
 
-const url = '/fonts/asblack57.woff2'
-const text = 'HIS FIRST FOLIO'
-const DISPLAY = 'AGU·PRESENTS'
+const url = '/fonts/pscu.woff'
+const text = 'HI!'
 
 const vertexShader = `
 uniform float uTime;
@@ -24,21 +20,121 @@ uniform vec2 uMouse;
 varying vec2 vUv;
 varying vec3 vNormal;
 
+
 void main() {
   vUv = uv;
   vNormal = normal;
 
   vec3 newPos = position;
-  // newPos.x -= uTime;
-  newPos.y += -3. + uProgress;
-  // newPos.z += 3. - uProgress;
-  newPos.x += sin(uTime + newPos.y + uProgress) * 0.2;
-  // newPos.z += sin(-uProgress * newPos.y + uProgress) * 0.2;
-  // newPos.x += sin((uMouse.x - 0.5) * newPos.y ) * 0.2 ;
+ 
+  vec4 modelPosition = modelMatrix * vec4(newPos, 1.0);
+  vec4 viewPosition = viewMatrix * modelPosition;
+  vec4 projectedPosition = projectionMatrix * viewPosition;
+
+  gl_Position = projectedPosition;
+}
+`
+const vertex2 = `
+uniform float uTime;
+uniform float uProgress;
+uniform vec2 uMouse;
+
+varying vec2 vUv;
+varying vec3 vNormal;
+
+//	Classic Perlin 3D Noise 
+//	by Stefan Gustavson
+//
+vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+vec3 fade(vec3 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
+
+float cnoise(vec3 P){
+  vec3 Pi0 = floor(P); // Integer part for indexing
+  vec3 Pi1 = Pi0 + vec3(1.0); // Integer part + 1
+  Pi0 = mod(Pi0, 289.0);
+  Pi1 = mod(Pi1, 289.0);
+  vec3 Pf0 = fract(P); // Fractional part for interpolation
+  vec3 Pf1 = Pf0 - vec3(1.0); // Fractional part - 1.0
+  vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
+  vec4 iy = vec4(Pi0.yy, Pi1.yy);
+  vec4 iz0 = Pi0.zzzz;
+  vec4 iz1 = Pi1.zzzz;
+
+  vec4 ixy = permute(permute(ix) + iy);
+  vec4 ixy0 = permute(ixy + iz0);
+  vec4 ixy1 = permute(ixy + iz1);
+
+  vec4 gx0 = ixy0 / 7.0;
+  vec4 gy0 = fract(floor(gx0) / 7.0) - 0.5;
+  gx0 = fract(gx0);
+  vec4 gz0 = vec4(0.5) - abs(gx0) - abs(gy0);
+  vec4 sz0 = step(gz0, vec4(0.0));
+  gx0 -= sz0 * (step(0.0, gx0) - 0.5);
+  gy0 -= sz0 * (step(0.0, gy0) - 0.5);
+
+  vec4 gx1 = ixy1 / 7.0;
+  vec4 gy1 = fract(floor(gx1) / 7.0) - 0.5;
+  gx1 = fract(gx1);
+  vec4 gz1 = vec4(0.5) - abs(gx1) - abs(gy1);
+  vec4 sz1 = step(gz1, vec4(0.0));
+  gx1 -= sz1 * (step(0.0, gx1) - 0.5);
+  gy1 -= sz1 * (step(0.0, gy1) - 0.5);
+
+  vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);
+  vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);
+  vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);
+  vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);
+  vec3 g001 = vec3(gx1.x,gy1.x,gz1.x);
+  vec3 g101 = vec3(gx1.y,gy1.y,gz1.y);
+  vec3 g011 = vec3(gx1.z,gy1.z,gz1.z);
+  vec3 g111 = vec3(gx1.w,gy1.w,gz1.w);
+
+  vec4 norm0 = taylorInvSqrt(vec4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));
+  g000 *= norm0.x;
+  g010 *= norm0.y;
+  g100 *= norm0.z;
+  g110 *= norm0.w;
+  vec4 norm1 = taylorInvSqrt(vec4(dot(g001, g001), dot(g011, g011), dot(g101, g101), dot(g111, g111)));
+  g001 *= norm1.x;
+  g011 *= norm1.y;
+  g101 *= norm1.z;
+  g111 *= norm1.w;
+
+  float n000 = dot(g000, Pf0);
+  float n100 = dot(g100, vec3(Pf1.x, Pf0.yz));
+  float n010 = dot(g010, vec3(Pf0.x, Pf1.y, Pf0.z));
+  float n110 = dot(g110, vec3(Pf1.xy, Pf0.z));
+  float n001 = dot(g001, vec3(Pf0.xy, Pf1.z));
+  float n101 = dot(g101, vec3(Pf1.x, Pf0.y, Pf1.z));
+  float n011 = dot(g011, vec3(Pf0.x, Pf1.yz));
+  float n111 = dot(g111, Pf1);
+
+  vec3 fade_xyz = fade(Pf0);
+  vec4 n_z = mix(vec4(n000, n100, n010, n110), vec4(n001, n101, n011, n111), fade_xyz.z);
+  vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);
+  float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); 
+  return 2.2 * n_xyz;
+}
+
+void main() {
+  vUv = uv;
+  vNormal = normal;
+
+  vec3 newPos = position;
+  float elv = 0.05;
+ float elevation = sin(newPos.y * newPos.x) * elv;
+
+ for(float i = 1.; i <= 3.; i++) {
+  elevation -= abs(cnoise(vec3(sin(newPos.x * 30. * i), newPos.y * 30. * i, uTime * 0.5)) * 0.05 / i);
+}
+
+newPos.y += elevation;
+ 
+
+              
 
   vec4 modelPosition = modelMatrix * vec4(newPos, 1.0);
-
-  // modelPosition.y += sin(modelPosition.x * 4.0) * 0.2;
   vec4 viewPosition = viewMatrix * modelPosition;
   vec4 projectedPosition = projectionMatrix * viewPosition;
 
@@ -75,69 +171,36 @@ float random(vec2 co){
 }
 
 void main() {
-  float normSpeed = clamp(uSpeed * 10., 0., 1.) * 0.3;
-    vec2 viewportUv = gl_FragCoord.xy / uResolution.xy;
-    
-    // Normalizing and multimpliing by resolution, and then back to the center
-    // vec2 newUV = (vUv - vec2(0.5)) * uResolution.xy + vec2(0.5);
-    // vec2 newUV = (vUv - vec2(uMouse)) * .5 ;
-    vec2 newUV = vUv - vec2(-0.5) * 0.3;
-
-
-
-    vec3 startColor = hsvToRgb(vec3(sin(uMouse.x / 2.) * 0.2, uSat, uLig)); // updating time
-    // vec3 startColor = hsvToRgb(vec3(0.9, uSat, uLig)); // not time
-    vec3 endColor = uEndColor;
-
-    float form = sin(atan((newUV.y - 0.3) * (newUV.y - 0.7 )) * 50. + uTime); // 01
-    form -= cos(-atan((newUV.x - 0.3) * (newUV.x - 0.7 )) * 50. + uTime); // 01.1
-    // form -= cos(-atan((newUV.x - 0.5) * (newUV.x - 0.5 )) * 50. + uTime); // 01.1
-    form += sin(-atan((newUV.x - 0.3) * (newUV.y - 0.7 )) * 50. + uTime); // 01.2
-    form += sin(-atan((newUV.x - 0.5) * (newUV.y - 0.5 )) * 50. + uTime); // 01.2
-    form += cos(atan((newUV.y - 0.3) * (newUV.x - 0.7 )) * 50. + uTime); // 01.3
-
-    form += cos(atan(newUV.y, newUV.x) * 20. + uTime); // SIGNAL
-
-    // vec2 mousePoint = vec2(uMouse.x + 0.5, uMouse.y + 1.5);
-
-    vec2 mousePoint = vec2(uMouse.x + 1., uMouse.y + 0.5);
-    // vec2 mousePoint = vec2(uMouse.x, uMouse.y);
-    
-
-    // float dist = distance(viewportUv / vec2(1., 2.), mousePoint / vec2(1., 2.) );
-    
-    // float dist = distance(viewportUv / vec2(1., 2.), mousePoint / vec2(1., 2.) );
-    float dist = distance(viewportUv, mousePoint );
-
-    // dist *= cos(sin(atan(viewportUv.y, viewportUv.x) * 4. + uTime));
-    dist += cos(sin(atan(viewportUv.x , viewportUv.y) * 6. + uTime)) * 0.1;
-    dist += smoothstep(0.2 , .8, dist - 0.5 - uMouse.x);
-
-    float centerDist = smoothstep(-0.3,0.38, length((0.5 - uMouse.x * 0.5 - dist)));
-
-    // CENTER
-    form += sin(pow(centerDist, 2.) * 5. + uTime);
-    form += cos(centerDist * 20. + uTime);
-    form -= sin(centerDist * -10. + uTime);
-    form -= cos(pow(-centerDist * 5.,10.) + uTime);
-
-    form += exp(-smoothstep(0.1,0.6,form) * 4.);
-
-    vec3 finalColor = mix(startColor, endColor, form); // MIX
-    finalColor += random(newUV + uTime * 0.03 ) * 0.5; // NOISE
-    gl_FragColor = vec4(finalColor, 1.);
+    gl_FragColor = vec4(1.,1., 1., 1.);
   }
 `
 
-function Demo({ tl, speed = 1 }) {
-  // const state = useThree()
-  // const cursor = useRef()
-  const { width, height } = useWindowSize()
-  // const { advance, viewport } = useThree()
-  const isTouchDevice = useIsTouchDevice()
-  const [hasMoved, setHasMoved] = useState(false)
+const fragment2 = `
+uniform sampler2D uTexture;
+uniform float uTime;
+uniform float uProgress;
+uniform float uSpeed;
+uniform vec2 uResolution;
+uniform vec2 uMouse;
+varying vec2 vUv;
 
-  // const childRef = useRef()
+uniform vec3 uEndColor;
+uniform vec3 uStartColor;
+
+uniform float uSat;
+uniform float uLig;
+
+varying vec3 vNormal;
+
+
+void main() {
+    gl_FragColor = vec4(0.,0., 0., 1.);
+  }
+`
+
+export function Demo({ tl, speed = 1 }) {
+  const { width, height } = useWindowSize()
+  const isTouchDevice = useIsTouchDevice()
 
   const ref = useRef()
   const matRef = useRef()
@@ -177,15 +240,11 @@ function Demo({ tl, speed = 1 }) {
       },
       4
     )
-
-    // console.log(matRef.current.uniforms.uProgress.value)
   })
 
   useLayoutEffect(() => {
     const onMouseMove = (e) => {
       if (isTouchDevice) return
-      // const x = (e.clientX / width - 0.5) * 2 * speed
-      // const y = (e.clientY / height - 0.5) * 2 * speed
 
       const x = (e.clientX / width - 0.5) * 2 * speed
       const y = -(e.clientY / height - 0.5) * 2 * speed
@@ -206,108 +265,46 @@ function Demo({ tl, speed = 1 }) {
   }, [speed])
 
   useFrame((time) => {
-    // inertia: the target speed is following the value but a little bit behind
-
     matRef.current.uniforms.uTime.value = time / 1000
-    // matRef.current.uniforms.uSpeed.value = targetSpeed
-    // console.log(targetSpeed)
-    // matRef.current.uniforms.uMouse.value = prevMouse
   })
 
   return (
-    <mesh
-      ref={ref}
-      scale={2.5}
-      // onClick={(e) => console.log('click')}
-      // onPointerOver={(e) => console.log('hover')}
-      // onPointerOut={(e) => console.log('unhover')}
-    >
-      <Text
-        fontSize={3.8}
-        font={url}
-        glyphGeometryDetail={16}
-        sdfGlyphSize={128}
-        letterSpacing={-0.03}
-        characters={text}
+    <>
+      <mesh
+        scale={1.15}
+        position={[0.2, 0.08, 0]}
+        // onClick={(e) => console.log('click')}
+        // onPointerOver={(e) => console.log('hover')}
+        // onPointerOut={(e) => console.log('unhover')}
       >
-        {text}
+        <Text
+          fontSize={1}
+          font={url}
+          glyphGeometryDetail={64}
+          sdfGlyphSize={256}
+          letterSpacing={0}
+          characters={text}
+        >
+          {text}
+          <shaderMaterial
+            ref={matRef}
+            fragmentShader={fragmentShader}
+            vertexShader={vertexShader}
+            uniforms={uniforms}
+            side={DoubleSide}
+          />
+        </Text>
+      </mesh>
+      <mesh position={[0, 0.5, 0]} rotation={[0, 0, Math.PI * 0.02]}>
+        <planeGeometry args={[7, 4, 256]} />
         <shaderMaterial
           ref={matRef}
-          fragmentShader={fragmentShader}
-          vertexShader={vertexShader}
+          fragmentShader={fragment2}
+          vertexShader={vertex2}
           uniforms={uniforms}
           side={DoubleSide}
         />
-      </Text>
-    </mesh>
-  )
-}
-
-// function Raf() {
-//   const { advance } = useThree()
-//   useFrame((time) => {
-//     advance(time / 1000)
-//   })
-// }
-
-export function WebGLDemo() {
-  // const { progress } = useProgress()
-
-  // useEffect(() => {
-  //   console.log(progress)
-  //   if (progress === 100) {
-  //     onLoad()
-  //   }
-  // }, [progress])
-  const tl = gsap.timeline()
-  useLayoutEffect(() => {
-    tl.to(
-      '.cha',
-      {
-        yPercent: -100,
-        duration: 1,
-        stagger: 0.03,
-        ease: 'Expo.easeOut',
-      },
-      2
-    ).to(
-      '.cha',
-      {
-        yPercent: -200,
-        duration: 1,
-        stagger: 0.04,
-        ease: 'Expo.easeIn',
-      },
-      3
-    )
-  }, [])
-
-  return (
-    <div className={s.hero}>
-      <div
-        role="heading"
-        aria-level={1}
-        aria-label={DISPLAY}
-        // ref={title}
-        className={clsx('title', s.title)}
-      >
-        {DISPLAY.split('').map((ch, i) => {
-          return (
-            <span
-              // ref={cha}
-              className={clsx('cha', s.cha)}
-              aria-hidden="true"
-              key={i}
-            >
-              {ch}
-            </span>
-          )
-        })}
-      </div>
-      <Canvas>
-        {/* <Raf /> */}
-        <Demo tl={tl} />
-      </Canvas>
-    </div>
+      </mesh>
+    </>
   )
 }

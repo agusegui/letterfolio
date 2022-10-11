@@ -1,9 +1,10 @@
 import { useTexture } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { useFrame, useLayoutEffect } from '@studio-freight/hamo'
+import { Demo } from 'components/webgl'
 import gsap from 'gsap'
 import { useScroll } from 'hooks/use-scroll'
-import { clamp, mapRange } from 'lib/maths'
+import { mapRange } from 'lib/maths'
 import { useMemo, useRef, useState } from 'react'
 import { useWindowSize } from 'react-use'
 import { DoubleSide, Vector2, Vector4 } from 'three'
@@ -155,22 +156,8 @@ function Poster({ url, ...props }) {
     []
   )
 
-  useScroll(({}) => {
-    // const progress = clamp(0, mapRange(480, 960, scroll, 0, 1), 1)
-    // const center = 0.6
-    // const progress1 = clamp(0, mapRange(0, center, progress, 0, 1), 1)
-    // const progress2 = clamp(0, mapRange(center - 0.055, 1, progress, 0, 1), 1)
-    // ref.current.position.x += progress
-  })
-
   useFrame((time) => {
     matRef.current.uniforms.uTime.value = time / 1000
-
-    // ref.current.position.y += 0.01
-    // if (ref.current.position.y > viewport.height / 1.02) {
-    //   ref.current.position.y = -viewport.height / 1.02
-    // }
-    // ref.current.rotation.z = ref.current.rotation.y += 0.01
   })
 
   return (
@@ -199,45 +186,58 @@ function Poster({ url, ...props }) {
 function Board() {
   const refe = useRef()
 
-  useScroll(({ scroll, velocity }) => {
-    const progress = clamp(0, mapRange(360, 2920, scroll, 0, 2), 2)
-    // const center = 0.6
-    // const progress1 = clamp(0, mapRange(0, center, progress, 0, 1), 1)
-    // const progress2 = clamp(0, mapRange(center - 0.055, 1, progress, 0, 1), 1)
+  useScroll(({ scroll, velocity, limit }) => {
+    // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
+    const progress = mapRange(0, limit, scroll, 0, 5)
 
-    refe.current.parent.position.z = progress
+    refe.current.parent.position.y = progress
     refe.current.children.map((e) => {
-      e.rotation.x = (Math.PI * -progress * 0.01 * velocity) / 2
+      e.rotation.x = (Math.PI * -progress * 0.001 * velocity) / 4
     })
   })
   return (
     <>
       <group ref={refe} position={[0, 0, -1]}>
-        <Poster url="/1.png" position={[-1, -0.4, -0.01]} scale={0.3} />
-        <Poster url="/2.png" position={[-0.5, 0, -0.01]} scale={0.4} />
-        <Poster url="/3.png" position={[0, 0.1, -0.01]} scale={0.5} />
-        <Poster url="/4.png" position={[0.5, 0.5, -0.01]} scale={0.6} />
-        <Poster url="/5.png" position={[1, 0.3, -0.01]} scale={0.5} />
-        <Poster url="/6.png" position={[1.5, -0.2, -0.01]} scale={0.4} />
+        <Poster url="/1.png" position={[-1.9, -2, -0.01]} scale={0.5} />
+        <Poster url="/2.png" position={[-1.9, -3, -0.01]} scale={0.5} />
+        <Poster url="/3.png" position={[-1.9, -4, -0.01]} scale={0.5} />
+        <Poster url="/4.png" position={[-1.9, -5, -0.01]} scale={0.5} />
+        <Poster url="/5.png" position={[-1.9, -6, -0.01]} scale={0.5} />
+        <Poster url="/6.png" position={[-1.9, -7, -0.01]} scale={0.5} />
       </group>
     </>
   )
 }
 
 export function WebGLBoard() {
-  // const { progress } = useProgress()
-
-  // useEffect(() => {
-  //   console.log(progress)
-  //   if (progress === 100) {
-  //     onLoad()
-  //   }
-  // }, [progress])
-  // const [ref, compute] = useRect()
+  const tl = gsap.timeline()
+  useLayoutEffect(() => {
+    tl.to(
+      '.cha',
+      {
+        yPercent: -100,
+        duration: 1,
+        stagger: 0.03,
+        ease: 'Expo.easeOut',
+      },
+      2
+    ).to(
+      '.cha',
+      {
+        yPercent: -200,
+        duration: 1,
+        stagger: 0.04,
+        ease: 'Expo.easeIn',
+      },
+      3
+    )
+  }, [])
 
   return (
-    <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
+    <Canvas camera={{ position: [0, 0, 1], fov: 75 }}>
       {/* <Raf /> */}
+
+      <Demo tl={tl} />
       <Board />
     </Canvas>
   )
