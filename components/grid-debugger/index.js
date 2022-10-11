@@ -26,7 +26,7 @@ export const GridDebugger = () => {
       </button>
       {visible && (
         <div className={cn('layout-grid', s.debugger)}>
-          {new Array(columns).fill(0).map((_, key) => (
+          {new Array(columns * 2).fill(0).map((_, key) => (
             <span key={key}></span>
           ))}
         </div>

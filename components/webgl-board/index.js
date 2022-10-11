@@ -42,7 +42,7 @@ void main() {
     uv.y
   );
 
-  vec4 finalState = mix(defaultState, fullScreenState, fourCornerProgress + waves);
+  vec4 finalState = mix(defaultState, fullScreenState, fourCornerProgress + waves) * 0.4;
 
   gl_Position = projectionMatrix * viewMatrix * finalState;
 }
@@ -188,22 +188,22 @@ function Board() {
 
   useScroll(({ scroll, velocity, limit }) => {
     // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
-    const progress = mapRange(0, limit, scroll, 0, 5)
+    const progress = mapRange(0, limit, scroll, 0, 3)
 
     refe.current.parent.position.y = progress
     refe.current.children.map((e) => {
-      e.rotation.x = (Math.PI * -progress * 0.001 * velocity) / 4
+      e.rotation.x = (Math.PI * -progress * 0.001 * velocity) / 2
     })
   })
   return (
     <>
       <group ref={refe} position={[0, 0, -1]}>
-        <Poster url="/1.png" position={[-1.9, -2, -0.01]} scale={0.5} />
-        <Poster url="/2.png" position={[-1.9, -3, -0.01]} scale={0.5} />
-        <Poster url="/3.png" position={[-1.9, -4, -0.01]} scale={0.5} />
-        <Poster url="/4.png" position={[-1.9, -5, -0.01]} scale={0.5} />
-        <Poster url="/5.png" position={[-1.9, -6, -0.01]} scale={0.5} />
-        <Poster url="/6.png" position={[-1.9, -7, -0.01]} scale={0.5} />
+        <Poster url="/1.png" position={[-1.15, -2, -0.01]} scale={0.6} />
+        <Poster url="/2.png" position={[-1.15, -4, -0.01]} scale={0.6} />
+        <Poster url="/3.png" position={[-1.15, -6, -0.01]} scale={0.6} />
+        <Poster url="/4.png" position={[-1.15, -8, -0.01]} scale={0.6} />
+        <Poster url="/5.png" position={[-1.15, -10, -0.01]} scale={0.6} />
+        <Poster url="/6.png" position={[-1.15, -14, -0.01]} scale={0.6} />
       </group>
     </>
   )
@@ -234,7 +234,7 @@ export function WebGLBoard() {
   }, [])
 
   return (
-    <Canvas camera={{ position: [0, 0, 1], fov: 75 }}>
+    <Canvas camera={{ position: [0, 0, 2], fov: 35 }}>
       {/* <Raf /> */}
 
       <Demo tl={tl} />

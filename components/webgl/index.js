@@ -122,11 +122,11 @@ void main() {
   vNormal = normal;
 
   vec3 newPos = position;
-  float elv = 0.05;
+  float elv = 0.1;
  float elevation = sin(newPos.y * newPos.x) * elv;
 
  for(float i = 1.; i <= 3.; i++) {
-  elevation -= abs(cnoise(vec3(sin(newPos.x * 30. * i), newPos.y * 30. * i, uTime * 0.5)) * 0.05 / i);
+  elevation -= abs(cnoise(vec3(sin(newPos.x * 8. * i), newPos.y * 2. * i, uTime * 0.5)) * 0.1 / i);
 }
 
 newPos.y += elevation;
@@ -194,6 +194,7 @@ varying vec3 vNormal;
 
 
 void main() {
+    
     gl_FragColor = vec4(0.,0., 0., 1.);
   }
 `
@@ -271,8 +272,8 @@ export function Demo({ tl, speed = 1 }) {
   return (
     <>
       <mesh
-        scale={1.15}
-        position={[0.2, 0.08, 0]}
+        scale={0.77}
+        position={[0.066, 0.02, 0]}
         // onClick={(e) => console.log('click')}
         // onPointerOver={(e) => console.log('hover')}
         // onPointerOut={(e) => console.log('unhover')}
@@ -295,8 +296,8 @@ export function Demo({ tl, speed = 1 }) {
           />
         </Text>
       </mesh>
-      <mesh position={[0, 0.5, 0]} rotation={[0, 0, Math.PI * 0.02]}>
-        <planeGeometry args={[7, 4, 256]} />
+      <mesh position={[0, 0.4, 0]} rotation={[0, 0, Math.PI * 0.05]}>
+        <planeGeometry args={[3, 2, 256]} />
         <shaderMaterial
           ref={matRef}
           fragmentShader={fragment2}
