@@ -5,7 +5,9 @@ import { useStore } from 'lib/store'
 import { useEffect, useState } from 'react'
 import s from './intro.module.scss'
 
-const DISPLAY = 'SOON'
+const DISPLAY = 'HELLO'
+const DISPLAY2 = 'ALO'
+const DISPLAY3 = 'HOLA'
 
 export const Intro = () => {
   const isMobile = useMediaQuery('(max-width: 800px)')
@@ -22,7 +24,7 @@ export const Intro = () => {
       {
         duration: 0.2,
         opacity: 1,
-        stagger: 0.2,
+        // stagger: 0.2,
         ease: 'Expo.easeOut',
       },
       0.5
@@ -41,12 +43,12 @@ export const Intro = () => {
         '.chas',
         {
           yPercent: 100,
-          duration: 0.5,
+          duration: 0.3,
           // opacity: 1,
           stagger: 0.03,
           ease: 'Expo.easeIn',
         },
-        2
+        1.5
       )
   }, [])
 
@@ -54,7 +56,7 @@ export const Intro = () => {
     setTimeout(() => {
       setIsLoaded(true)
       // setIntroOut(true)
-    }, 1000)
+    }, 500)
   }, [])
 
   useEffect(() => {
@@ -128,11 +130,11 @@ export const Intro = () => {
           <div
             role="heading"
             aria-level={1}
-            aria-label={DISPLAY}
+            aria-label={DISPLAY2}
             // ref={title}
             className={clsx('title', s.title)}
           >
-            {DISPLAY.split('').map((ch, i) => {
+            {DISPLAY2.split('').map((ch, i) => {
               return (
                 <span
                   // ref={cha}
@@ -148,11 +150,11 @@ export const Intro = () => {
           <div
             role="heading"
             aria-level={1}
-            aria-label={DISPLAY}
+            aria-label={DISPLAY3}
             // ref={title}
             className={clsx('title', s.title)}
           >
-            {DISPLAY.split('').map((ch, i) => {
+            {DISPLAY3.split('').map((ch, i) => {
               return (
                 <span
                   // ref={cha}

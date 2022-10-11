@@ -28,6 +28,13 @@ export default function Document() {
           crossOrigin="anonymous"
         />
         <link
+          href="/fonts/pscu.woff"
+          as="font"
+          rel="preload prefetch"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        <link
           rel="preload prefetch"
           href="/fonts/psfb.woff2"
           as="font"

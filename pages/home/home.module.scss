@@ -4,24 +4,44 @@ $delay-intro-top: 450ms;
 $intro-duration: 2050ms;
 
 .home {
-  padding-top: 74vh;
-  font-size: 36px;
-  line-height: 133%;
+  padding-top: 678px;
+
   position: relative;
-  left: 676px;
-  width: 864px;
+  left: 672px;
+  width: 100%;
 
   .intro {
     position: relative;
+    line-height: 133%;
+    width: 862px;
+
+    font-size: 36px;
     z-index: 5;
     color: white;
     // mix-blend-mode: difference;
     mix-blend-mode: difference;
   }
   .content {
+    width: 672px;
+
+    margin-top: 192px;
+    line-height: 133%;
+    font-size: 24px;
     position: relative;
+    font-family: 'Parclo Sans Trial';
 
     z-index: 1;
+
+    .title {
+      font-size: 48px;
+      line-height: 133%;
+      font-family: 'Parclo Serif Trial';
+      font-weight: 800;
+    }
+    .subtitle {
+      font-size: 36px;
+      line-height: 266%;
+    }
   }
 
   .gl {

@@ -188,7 +188,7 @@ function Board() {
 
   useScroll(({ scroll, velocity, limit }) => {
     // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
-    const progress = mapRange(0, limit, scroll, 0, 3)
+    const progress = mapRange(0, limit, scroll, 0, 10)
 
     refe.current.parent.position.y = progress
     refe.current.children.map((e) => {

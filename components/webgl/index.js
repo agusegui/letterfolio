@@ -1,10 +1,8 @@
 import { Text } from '@react-three/drei'
-import {
-  useFrame,
-  useIsTouchDevice,
-  useLayoutEffect,
-} from '@studio-freight/hamo'
+import { useIsTouchDevice, useLayoutEffect } from '@studio-freight/hamo'
 import gsap from 'gsap'
+import { useScroll } from 'hooks/use-scroll'
+import { mapRange } from 'lib/maths'
 import { useMemo, useRef } from 'react'
 import { useWindowSize } from 'react-use'
 import { Color, DoubleSide, Vector2 } from 'three'
@@ -123,10 +121,10 @@ void main() {
 
   vec3 newPos = position;
   float elv = 0.1;
- float elevation = sin(newPos.y * newPos.x) * elv;
+ float elevation = sin(newPos.y * newPos.x * 2.) * elv;
 
- for(float i = 1.; i <= 3.; i++) {
-  elevation -= abs(cnoise(vec3(sin(newPos.x * 8. * i), newPos.y * 2. * i, uTime * 0.5)) * 0.1 / i);
+ for(float i = 1.; i <= 4.; i++) {
+  elevation -= abs(cnoise(vec3(sin(newPos.x * 8. * i), newPos.y * 3. * i, uProgress * 2.)) * 0.04 / i);
 }
 
 newPos.y += elevation;
@@ -231,17 +229,17 @@ export function Demo({ tl, speed = 1 }) {
     []
   )
 
-  useLayoutEffect(() => {
-    tl.to(
-      matRef.current.uniforms.uProgress,
-      {
-        value: 3,
-        duration: 2,
-        ease: 'expo.out',
-      },
-      4
-    )
-  })
+  // useLayoutEffect(() => {
+  //   tl.to(
+  //     matRef.current.uniforms.uProgress,
+  //     {
+  //       value: 3,
+  //       duration: 2,
+  //       ease: 'expo.out',
+  //     },
+  //     4
+  //   )
+  // })
 
   useLayoutEffect(() => {
     const onMouseMove = (e) => {
@@ -264,10 +262,16 @@ export function Demo({ tl, speed = 1 }) {
       window.removeEventListener('mousemove', onMouseMove, false)
     }
   }, [speed])
+  useScroll(({ scroll, velocity, limit }) => {
+    // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
+    const progress = mapRange(0, limit, scroll, 0, 10)
 
-  useFrame((time) => {
-    matRef.current.uniforms.uTime.value = time / 1000
+    matRef.current.uniforms.uProgress.value = progress
   })
+
+  // useFrame((time) => {
+  //   matRef.current.uniforms.uTime.value = time / 1000
+  // })
 
   return (
     <>

@@ -50,10 +50,14 @@ $intro-out: 1500ms;
       .title {
         display: flex;
         color: var(--theme-primary);
-        font-family: AsBlackDisk;
-        font-size: 666px;
-        line-height: 71%;
-        letter-spacing: -0.03em;
+        // font-family: AsBlackDisk;
+        font-family: 'Parclo Sans Condensed Trial';
+        font-style: normal;
+        font-weight: 975;
+        // font-size: 708px;
+        font-size: 566px;
+        line-height: 80%;
+        // letter-spacing: -0.03em;
         overflow: hidden;
         opacity: 0;
         will-change: transform, opacity;
