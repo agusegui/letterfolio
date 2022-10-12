@@ -71,7 +71,7 @@ void main() {
   }
 `
 
-function Poster({ url, ...props }) {
+function Poster({ args, url, ...props }) {
   // const state = useThree()
   const { width, height } = useWindowSize()
   // const { advance, viewport } = useThree()
@@ -170,7 +170,7 @@ function Poster({ url, ...props }) {
         onPointerMissed={(e) => (e.stopPropagation(), click(null))}
         {...props}
       >
-        <planeGeometry args={[1, 1.33, 64, 64]} />
+        <planeGeometry args={args} />
         <shaderMaterial
           ref={matRef}
           fragmentShader={fragmentShader}
@@ -198,12 +198,42 @@ function Board() {
   return (
     <>
       <group ref={refe} position={[0, -2, -1]}>
-        <Poster url="/1.png" position={[-1.15, -2, -0.01]} scale={0.6} />
-        <Poster url="/2.png" position={[-1.15, -4, -0.01]} scale={0.6} />
-        <Poster url="/3.png" position={[-1.15, -6, -0.01]} scale={0.6} />
-        <Poster url="/4.png" position={[-1.15, -8, -0.01]} scale={0.6} />
-        <Poster url="/5.png" position={[-1.15, -10, -0.01]} scale={0.6} />
-        <Poster url="/6.png" position={[-1.15, -14, -0.01]} scale={0.6} />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/1.png"
+          position={[-1.15, -2, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/2.png"
+          position={[-1.15, -4, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/3.png"
+          position={[-1.15, -6, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/4.png"
+          position={[-1.15, -8, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/5.png"
+          position={[-1.15, -10, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/6.png"
+          position={[-1.15, -14, -0.01]}
+          scale={0.6}
+        />
       </group>
     </>
   )
