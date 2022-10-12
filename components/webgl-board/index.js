@@ -65,7 +65,7 @@ void main() {
     vec2 viewportUv = gl_FragCoord.xy / uResolution.xy;
     vec2 newUV = (vUv - vec2(0.5)) * uResolution.xy + vec2(0.5);
     vec4 pic = texture(uTexture, vUv);
-    pic += random(vUv + uTime * 0.03 ) * 0.2; // NOISE
+    // pic += random(vUv + uTime * 0.03 ) * 0.2; // NOISE
 
     gl_FragColor = vec4(pic);
   }

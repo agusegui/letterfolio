@@ -9,11 +9,13 @@
   font-family: 'Parclo Sans Condensed Trial';
   src: url('/fonts/pscu.woff') format('woff2');
   font-display: swap;
+  font-weight: 975;
 }
 @font-face {
   font-family: 'Parclo Sans Bold';
   src: url('/fonts/psb.woff2') format('woff2');
   font-display: swap;
+  font-weight: 700;
 }
 @font-face {
   font-family: 'Parclo Serif Trial';
@@ -24,6 +26,7 @@
   font-family: 'Parclo Serif Trial';
   src: url('/fonts/psfb.woff2') format('woff2');
   font-display: swap;
+  font-weight: 900;
 }
 
 .text-right {
@@ -47,10 +50,4 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.serif {
-  font-family: 'Parclo Serif';
-}
-.sans {
 }
