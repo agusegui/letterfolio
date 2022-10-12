@@ -5,9 +5,9 @@ import { useStore } from 'lib/store'
 import { useEffect, useState } from 'react'
 import s from './intro.module.scss'
 
-const DISPLAY = 'HELLO'
-const DISPLAY2 = 'ALO!'
-const DISPLAY3 = 'HOLA'
+const DISPLAY = 'HOLA'
+const DISPLAY2 = 'HELLO'
+const DISPLAY3 = 'ALO'
 
 export const Intro = () => {
   const isMobile = useMediaQuery('(max-width: 800px)')

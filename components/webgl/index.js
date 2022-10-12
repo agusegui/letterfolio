@@ -123,7 +123,7 @@ void main() {
   // uProgress = 1.;
   newPos.y += uProgress * 0.1;
   float elv = 0.9;
-  elv *= uProgress;
+  elv *= uProgress * 0.5;
  float elevation = sin(newPos.y * newPos.x  ) * elv;
 
  for(float i = 1.; i <= 4.; i++) {
@@ -303,7 +303,7 @@ export function Demo({ tl, speed = 1 }) {
           />
         </Text>
       </mesh>
-      <mesh position={[0, 0.4, 0]} rotation={[0, 0, Math.PI * 0.05]}>
+      <mesh position={[0, 0.4, 0]} rotation={[0, 0, Math.PI * 0.02]}>
         <planeGeometry args={[3, 2, 256]} />
         <shaderMaterial
           ref={matRef}
