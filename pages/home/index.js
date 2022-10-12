@@ -45,10 +45,10 @@ export default function Home() {
         </div>
 
         <div className={s.content}>
-          <p>
-            I only apply to positions that makes me feel in home and valued as a
-            person, not as an asset. It’s so hard to find jobs in this way -I
-            lack a lot of work because that- but I’m sure that every project
+          <p className="firstletter">
+            Rem. I only apply to positions that makes me feel in home and valued
+            as a person, not as an asset. It’s so hard to find jobs in this way
+            -I lack a lot of work because that- but I’m sure that every project
             I’ve participated came with real people and a kind of energy that
             produces creative outputs without limits. <br />
             <br />

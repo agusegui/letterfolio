@@ -45,6 +45,18 @@
   color: var(--dark);
 }
 
+.firstletter::first-letter {
+  // -webkit-initial-letter: 2;
+  font-family: 'Parclo Serif Trial';
+  // initial-letter: 2;
+  font-size: 112px;
+  padding: 12px 12px;
+  margin: 12px 0.3rem 0 0;
+
+  float: left;
+  line-height: 0.5;
+}
+
 .truncate {
   max-width: inherit;
   overflow: hidden;

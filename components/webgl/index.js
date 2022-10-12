@@ -1,12 +1,15 @@
 import { Text } from '@react-three/drei'
-import { useIsTouchDevice, useLayoutEffect } from '@studio-freight/hamo'
+import {
+  useFrame,
+  useIsTouchDevice,
+  useLayoutEffect,
+} from '@studio-freight/hamo'
 import gsap from 'gsap'
 import { useScroll } from 'hooks/use-scroll'
 import { mapRange } from 'lib/maths'
 import { useMemo, useRef } from 'react'
 import { useWindowSize } from 'react-use'
 import { Color, DoubleSide, Vector2 } from 'three'
-
 const url = '/fonts/pscu.woff'
 const text = 'HI!'
 
@@ -147,6 +150,7 @@ const fragmentShader = `
 uniform sampler2D uTexture;
 uniform float uTime;
 uniform float uProgress;
+uniform float uProg;
 uniform float uSpeed;
 uniform vec2 uResolution;
 uniform vec2 uMouse;
@@ -171,8 +175,59 @@ float random(vec2 co){
     return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
+const mat2 m = mat2( 0.80,  0.60, -0.60,  0.80 ); // Rotation proportionals ( 6 - 8 right triangle 36ª)
+
+float hash( float n )
+{
+    return fract(sin(n)*43758.5453);
+}
+
+float noise( in vec2 x )
+{
+    vec2 p = floor(x);
+    vec2 f = fract(x);
+
+    f = f*f*(3.0-2.0*f);
+
+    float n = p.x + p.y*57.0;
+
+    return mix(mix( hash(n+  0.0), hash(n+  1.0),f.x),
+               mix( hash(n+ 57.0), hash(n+ 58.0),f.x),f.y);
+}
+
+//fractional brawnian motion
+float fbm( vec2 p) {
+    float f = 0.0;
+    f += 0.5000 * noise(p); // 1 Octave += amplitude * freq
+    // Nesxt time I call p i have twice the freq
+                            p *= m * 2.02; 
+    f += 0.2500 * noise(p); p *= m * 2.03; // 2 Octave
+    f += 0.1250 * noise(p); p *= m * 2.01; // 3 Octave
+    f += 0.0625 * noise(p); p *= m * 2.04; // 4 Octave
+    f /= 0.9375;
+    return f;
+}
+
 void main() {
-    gl_FragColor = vec4(1.,1., 1., 1.);
+    vec2 uv = gl_FragCoord.xy / uResolution.xy;
+    vec2 p = -uProg + 2.0 * uv - uMouse.y * 0.8 + uMouse.x * 0.2 + 2. + uProgress; 
+    p.x *= uResolution.x/uResolution.y;
+    p *= m * -m;
+
+    vec3 col = vec3(uEndColor);
+    float ang = atan( p.y, p.x );
+    float f = fbm(8. * p + uMouse * 5.);
+    float c = length(p);
+    
+
+    float form = 0.6 + 0.5 * (sin(p.x * f + uProgress * 1. + uProg) * 0.5);
+    col += vec3(uStartColor) * smoothstep(form, form + 0.01, 0.2 - p.x * c * .5);
+
+    form += 0.3 * sin(p.x * f - uProgress * 4.);
+    col *= vec3(1.) * smoothstep(form, form + 0.01, 2. + p.x * c * .3);
+
+
+    gl_FragColor = vec4(col, 1.);
   }
 `
 
@@ -221,28 +276,31 @@ export function Demo({ tl, speed = 1 }) {
       uResolution: {
         value: new Vector2(width, height),
       },
-      uStartColor: { value: new Color('#9FBAF9') },
-      uEndColor: { value: new Color('#FEB3D9') },
+      uStartColor: { value: new Color('#CA1AC5') },
+      uEndColor: { value: new Color('#D08FD3') },
       uSat: { value: 1.0 },
       uLig: { value: 0.5 },
       uProgress: {
+        value: 0,
+      },
+      uProg: {
         value: 0,
       },
     }),
     []
   )
 
-  // useLayoutEffect(() => {
-  //   tl.to(
-  //     matRef.current.uniforms.uProgress,
-  //     {
-  //       value: 1,
-  //       duration: 2,
-  //       ease: 'expo.out',
-  //     },
-  //     2
-  //   )
-  // })
+  useLayoutEffect(() => {
+    tl.to(
+      matRef.current.uniforms.uProg,
+      {
+        value: 4,
+        duration: 2,
+        ease: 'Power3.easeOut',
+      },
+      1.5
+    )
+  })
 
   useLayoutEffect(() => {
     const onMouseMove = (e) => {
@@ -254,7 +312,7 @@ export function Demo({ tl, speed = 1 }) {
       gsap.to(matRef.current.uniforms.uMouse.value, {
         x,
         y,
-        duration: 1,
+        duration: 2,
         ease: 'expo.out',
       })
     }
@@ -272,9 +330,9 @@ export function Demo({ tl, speed = 1 }) {
     matRef.current.uniforms.uProgress.value = progress
   })
 
-  // useFrame((time) => {
-  //   matRef.current.uniforms.uTime.value = time / 1000
-  // })
+  useFrame((time) => {
+    matRef.current.uniforms.uTime.value = time / 1000
+  })
 
   return (
     <>
