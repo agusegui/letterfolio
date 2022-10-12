@@ -210,7 +210,7 @@ float fbm( vec2 p) {
 
 void main() {
     vec2 uv = gl_FragCoord.xy / uResolution.xy;
-    vec2 p = -uProg + 2.0 * uv - uMouse.y * 0.8 + uMouse.x * 0.2 + 2. + uProgress; 
+    vec2 p = -uProg + 2.0 * uv - uMouse.y * 0.2 - uMouse.x * 0.2 + 2. + uProgress; 
     p.x *= uResolution.x/uResolution.y;
     p *= m * -m;
 
