@@ -4,7 +4,7 @@ $delay-intro-top: 450ms;
 $intro-duration: 2050ms;
 
 .home {
-  padding-top: 678px;
+  padding-top: 572px;
 
   position: relative;
   left: 672px;
@@ -13,7 +13,7 @@ $intro-duration: 2050ms;
   .intro {
     position: relative;
     line-height: 133%;
-    width: 862px;
+    width: 700px;
 
     font-size: 36px;
     z-index: 5;
@@ -42,6 +42,18 @@ $intro-duration: 2050ms;
     .subtitle {
       font-size: 36px;
       line-height: 266%;
+    }
+    ul {
+      margin: 48px 0;
+      list-style: upper-roman;
+      li {
+        margin: 24px 64px 0;
+
+        &::marker {
+          font-size: 16px;
+          color: var(--shadow);
+        }
+      }
     }
   }
 

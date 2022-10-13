@@ -27,36 +27,26 @@ export const Intro = () => {
         // stagger: 0.2,
         ease: 'Expo.easeOut',
       },
-      0.5
+      0.2
     )
-      // .to(
-      //   '.title',
-      //   {
-      //     duration: 0.5,
-      //     yPercent: 100,
-      //     // stagger: 0.03,
-      //     ease: 'Expo.easeIn',
-      //   },
-      //   1.5
-      // )
-      .to(
-        '.chas',
-        {
-          yPercent: 100,
-          duration: 0.3,
-          // opacity: 1,
-          stagger: 0.03,
-          ease: 'Expo.easeIn',
-        },
-        1.5
-      )
+    .to(
+      '.chas',
+      {
+        yPercent: 100,
+        duration: 0.4,
+        // opacity: 1,
+        stagger: 0.03,
+        ease: 'Expo.easeIn',
+      },
+      2
+    )
   }, [])
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true)
       // setIntroOut(true)
-    }, 500)
+    }, 800)
   }, [])
 
   useEffect(() => {

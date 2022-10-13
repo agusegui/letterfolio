@@ -210,18 +210,18 @@ float fbm( vec2 p) {
 
 void main() {
     vec2 uv = gl_FragCoord.xy / uResolution.xy;
-    vec2 p = -uProg + 2.0 * uv - uMouse.y * 0.2 - uMouse.x * 0.2 + 2. + uProgress; 
+    vec2 p = -uProg + 2.0 * uv - uMouse.y * 0.5 - uMouse.x * 0.2 + 2. + uProgress; 
     p.x *= uResolution.x/uResolution.y;
     p *= m * -m;
 
-    vec3 col = vec3(uEndColor);
+    vec3 col = vec3(0.);
     float ang = atan( p.y, p.x );
     float f = fbm(8. * p + uMouse * 5.);
     float c = length(p);
     
 
     float form = 0.6 + 0.5 * (sin(p.x * f + uProgress * 1. + uProg) * 0.5);
-    col += vec3(uStartColor) * smoothstep(form, form + 0.01, 0.2 - p.x * c * .5);
+    col += vec3(1.) * smoothstep(form, form + 0.01, 0.2 - p.x * c * .5);
 
     form += 0.3 * sin(p.x * f - uProgress * 4.);
     col *= vec3(1.) * smoothstep(form, form + 0.01, 2. + p.x * c * .3);
@@ -338,7 +338,7 @@ export function Demo({ tl, speed = 1 }) {
     <>
       <mesh
         scale={0.83}
-        position={[0.09, 0.07, 0]}
+        position={[0.09, 0.2, 0]}
         // onClick={(e) => console.log('click')}
         // onPointerOver={(e) => console.log('hover')}
         // onPointerOut={(e) => console.log('unhover')}
@@ -362,7 +362,7 @@ export function Demo({ tl, speed = 1 }) {
         </Text>
       </mesh>
       <mesh position={[0, 0.4, 0]} rotation={[0, 0, Math.PI * 0.02]}>
-        <planeGeometry args={[3, 2, 256]} />
+        <planeGeometry args={[3, 2.2, 256]} />
         <shaderMaterial
           ref={matRef}
           fragmentShader={fragment2}

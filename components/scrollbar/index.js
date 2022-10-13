@@ -8,6 +8,8 @@ import s from './scrollbar.module.scss'
 
 export function Scrollbar({}) {
   const thumb = useRef()
+  const rectRef = useRef()
+  // const [setRef, rect] = useRect()
   const { width: windowWidth, height: windowHeight } = useWindowSize()
   const lenis = useStore(({ lenis }) => lenis)
   const [innerMeasureRef, { height: innerHeight }] = useMeasure()
@@ -19,7 +21,10 @@ export function Scrollbar({}) {
     thumb.current.style.transform = `translate3d(0,${
       progress * (innerHeight - thumbHeight)
     }px,0)`
-  })
+
+    const string = `${Math.round(scroll / 100)}%`
+    rectRef.current.innerHTML = string
+  }, [])
 
   const [clicked, setClicked] = useState(false)
 
@@ -60,21 +65,41 @@ export function Scrollbar({}) {
   }, [clicked, windowHeight, windowWidth, lenis])
 
   return (
-    <div className={s.scrollbar}>
-      <div ref={innerMeasureRef} className={s.inner}>
+    <>
+      <div id="rect">
         <div
-          className={s.thumb}
-          ref={(node) => {
-            thumb.current = node
-            thumbMeasureRef(node)
+          ref={rectRef}
+          style={{
+            position: 'fixed',
+            right: '0',
+            padding: '14px',
+            bottom: '96px',
+            width: '192px',
+            height: '48px',
+            fontSize: '16px',
+            textAlign: 'center',
+            backgroundColor: '#fefbf5',
+            color: 'black',
+            zIndex: 2,
           }}
-          onPointerDown={() => {
-            setClicked(true)
-          }}
-        >
-          I
+        ></div>
+      </div>
+      <div className={s.scrollbar}>
+        <div ref={innerMeasureRef} className={s.inner}>
+          <div
+            className={s.thumb}
+            ref={(node) => {
+              thumb.current = node
+              thumbMeasureRef(node)
+            }}
+            onPointerDown={() => {
+              setClicked(true)
+            }}
+          >
+            I
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

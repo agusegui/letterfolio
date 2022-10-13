@@ -188,11 +188,12 @@ function Board() {
 
   useScroll(({ scroll, velocity, limit }) => {
     // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
-    const progress = mapRange(0, limit, scroll, 0, 10)
+    const progress = mapRange(0, limit, scroll, 0, 25)
 
     refe.current.parent.position.y = progress
     refe.current.children.map((e) => {
-      e.rotation.x = Math.PI * -progress * 0.001 * velocity * 0.2
+      e.rotation.x = Math.PI * -progress * 0.1 * velocity * 0.002
+      e.rotation.y = Math.PI * -progress * 0.1 * -velocity * 0.002
     })
   })
   return (
@@ -205,33 +206,123 @@ function Board() {
           scale={0.6}
         />
         <Poster
-          args={[1, 1.33, 64, 64]}
-          url="/2.png"
-          position={[-1.15, -4, -0.01]}
+          args={[1.33, 0.75, 64, 64]}
+          url="/folio1.png"
+          position={[-1.15, -3, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.5, 1, 64, 64]}
+          url="/foliomobileprocess.png"
+          position={[-1.3, -3.7, -0.05]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.5, 1, 64, 64]}
+          url="/foliomobilework.png"
+          position={[-1, -3.7, -0.05]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1.33, 0.75, 64, 64]}
+          url="/folio2.png"
+          position={[-1.15, -4.4, -0.01]}
           scale={0.6}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
-          url="/3.png"
+          url="/2.png"
+          position={[-1.15, -5.3, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1.33, 1, 64, 64]}
+          url="/noirrender.png"
           position={[-1.15, -6, -0.01]}
           scale={0.6}
         />
         <Poster
-          args={[1, 1.33, 64, 64]}
-          url="/4.png"
+          args={[1.33, 1, 64, 64]}
+          url="/noirrender2.png"
+          position={[-1.15, -7, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/scrabble.png"
           position={[-1.15, -8, -0.01]}
           scale={0.6}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
-          url="/5.png"
+          url="/scrabble2.png"
+          position={[-1.15, -9, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/3.png"
           position={[-1.15, -10, -0.01]}
           scale={0.6}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
+          url="/4.png"
+          position={[-1.15, -11, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/5.png"
+          position={[-1.15, -12, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
           url="/6.png"
-          position={[-1.15, -14, -0.01]}
+          position={[-1.15, -13, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illu.png"
+          position={[-1.3, -13.9, -0.5]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illu2.png"
+          position={[-1, -14.1, -0.2]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1.2, 1.2, 64, 64]}
+          url="/illu3.png"
+          position={[-1.15, -14.5, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.42, 1.33, 64, 64]}
+          url="/bent1.png"
+          position={[-1.1, -17.3, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.42, 1.33, 64, 64]}
+          url="/bent2.png"
+          position={[-1.3, -17.1, -0.2]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.42, 1.33, 64, 64]}
+          url="/bent3.png"
+          position={[-1, -17.1, -0.2]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.42, 1.33, 64, 64]}
+          url="/bent4.png"
+          position={[-1.6, -17.3, -0.5]}
           scale={0.6}
         />
       </group>
