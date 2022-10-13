@@ -14,15 +14,25 @@
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    // background-color: var(--black);
-    border: solid black;
-    opacity: 0.4;
-    transition: transform 600ms var(--ease-out-expo);
+    width: 24px;
+    height: 24px;
+    border: solid var(--gray);
+
+    // opacity: 1;
+    transition: color transform 600ms var(--ease-out-expo);
+
+    // &::after {
+    //   content: '!';
+    //   font-family: 'Parclo Sans Bold';
+    //   font-weight: 700;
+    //   font-size: 36px;
+    //   color: black;
+    //   mix-blend-mode: overlay;
+    // }
 
     &.pointer {
       transform: translate(-50%, -50%) scale(0.5);
+      background-color: var(--gray);
     }
   }
 }

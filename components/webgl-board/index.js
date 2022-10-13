@@ -198,7 +198,7 @@ function Board() {
   })
   return (
     <>
-      <group ref={refe} position={[0, -2, -1]}>
+      <group ref={refe} position={[0, -1, -1]}>
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/1.png"
