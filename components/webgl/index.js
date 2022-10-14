@@ -298,7 +298,7 @@ export function Demo({ tl, speed = 1 }) {
         duration: 2,
         ease: 'Power3.easeOut',
       },
-      1.5
+      2
     )
   })
 

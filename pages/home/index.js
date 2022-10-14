@@ -22,8 +22,8 @@ export default function Home() {
 
       // const string = `${Math.round(scroll / 100 + 15)}%`
       // rectRef.current.innerHTML = string
-    },
-    [rect]
+    }
+    // [rect]
   )
 
   return (

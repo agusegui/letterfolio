@@ -10,7 +10,7 @@
   z-index: 1;
   padding: desktop-vw(24px) 0;
   font-family: 'Parclo Serif';
-  font-size: 192px;
+  font-size: 128px;
   text-align: center;
   border-right: solid 1px var(--gray);
   color: var(--gray);
@@ -27,7 +27,7 @@
     width: desktop-vw(8px);
     // background-color: var(--gray);
     position: absolute;
-    right: desktop-vw(24px);
+    right: desktop-vw(13px);
     // border-radius: desktop-vw(4px);
     // border: desktop-vw(1px) solid var(--black);
     cursor: grab;

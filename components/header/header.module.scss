@@ -24,12 +24,17 @@
 
   .head {
     height: 60px;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+
     pointer-events: all;
 
-    position: relative;
     z-index: 2;
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
   }
 }

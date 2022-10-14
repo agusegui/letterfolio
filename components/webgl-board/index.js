@@ -1,4 +1,4 @@
-import { useTexture } from '@react-three/drei'
+import { Text, useTexture } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { useFrame, useLayoutEffect } from '@studio-freight/hamo'
 import { Demo } from 'components/webgl'
@@ -8,7 +8,8 @@ import { mapRange } from 'lib/maths'
 import { useMemo, useRef, useState } from 'react'
 import { useWindowSize } from 'react-use'
 import { DoubleSide, Vector2, Vector4 } from 'three'
-
+const url = '/fonts/psr.woff'
+const text = 'click to expand!'
 const vertexShader = `
 uniform float uTime;
 uniform float uProgress;
@@ -199,6 +200,18 @@ function Board() {
   return (
     <>
       <group ref={refe} position={[0, -1, -1]}>
+        <Text
+          position={[-1.38, -2.38, 0]}
+          fontSize={0.03}
+          font={url}
+          glyphGeometryDetail={12}
+          sdfGlyphSize={32}
+          letterSpacing={0}
+          characters={text}
+        >
+          {text}
+          <meshBasicMaterial color={'gray'} />
+        </Text>
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/1.png"
