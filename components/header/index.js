@@ -1,6 +1,5 @@
 import cn from 'clsx'
 import { Link } from 'components/link'
-import { Navigation } from 'components/navigation'
 import { useStore } from 'lib/store'
 import { forwardRef } from 'react'
 import shallow from 'zustand/shallow'
@@ -16,7 +15,6 @@ export const Header = forwardRef((_, ref) => {
 
   return (
     <header className={s.header} ref={ref}>
-      <Navigation />
       <div className={cn('lb', s.head)}>
         <div className={s.left}>
           <svg
@@ -38,7 +36,9 @@ export const Header = forwardRef((_, ref) => {
           </svg>
           <Link href="/">Agustín Seguí</Link>
         </div>
-        <Link href="/fm">Contact Me</Link>
+        <div className={s.right}>
+          <Link href="/">Contact Me</Link>
+        </div>
       </div>
     </header>
   )

@@ -1,25 +1,28 @@
 .navigation {
   pointer-events: all;
-  height: 0;
-  background-color: var(--theme-primary);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: 1s height var(--ease-out-expo);
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
+  position: fixed;
+  bottom: 96px;
+  right: 192px;
+  width: 292px;
+  text-align: right;
+  font-weight: 400;
+  font-size: 24px;
+  z-index: 3;
+  will-change: opacity;
+  transition: opacity 300ms ease-in-out;
 
-  &.closed {
-    pointer-events: none;
-    height: 0;
-
-    > * {
-      opacity: 0;
+  opacity: 0.4;
+  &:hover {
+    opacity: 1;
+  }
+  a {
+    opacity: 0.4;
+    will-change: opacity;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+      opacity: 1;
     }
   }
 }

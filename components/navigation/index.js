@@ -1,11 +1,9 @@
 import { useLayoutEffect } from '@studio-freight/hamo'
-import cn from 'clsx'
 import { Link } from 'components/link'
 import { useStore } from 'lib/store'
 import { useRouter } from 'next/router'
 import shallow from 'zustand/shallow'
 import s from './navigation.module.scss'
-
 export const Navigation = () => {
   const [navIsOpen, setNavIsOpen] = useStore(
     (state) => [state.navIsOpen, state.setNavIsOpen],
@@ -27,10 +25,15 @@ export const Navigation = () => {
   }, [])
 
   return (
-    <div className={cn(s.navigation, !navIsOpen && s.closed)}>
-      <Link href="/">home</Link>
-      <Link href="/gsap">gsap</Link>
-      <Link href="/contact">contact</Link>
+    <div
+      className={s.navigation}
+      // className={cn(s.navigation, !navIsOpen && s.closed)}
+    >
+      <Link href="#intro">Intro</Link>
+      <Link href="#about-me">About me</Link>
+      <Link href="#to-share">What to share</Link>
+      <Link href="#why">Why Im Here</Link>
+      <Link href="#why">Colophon</Link>
     </div>
   )
 }

@@ -73,7 +73,7 @@ export function Scrollbar({}) {
             position: 'fixed',
             right: '0',
             padding: '14px',
-            bottom: '96px',
+            bottom: '84px',
             width: '192px',
             height: '48px',
             fontSize: '16px',

@@ -44,7 +44,7 @@ export default function Home() {
           <br />
         </div>
 
-        <div className={s.content}>
+        <div id="intro" className={s.content}>
           <p className="firstletter">
             Reading such a job post was already valuable to me, because it
             touched me deeply in a time where I’m struggling to find jobs that
@@ -74,7 +74,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={s.content}>
+        <div id="about-me" className={s.content}>
           <h3 className={s.title}>About me</h3>
           <h4 className={s.subtitle}>From a type-graphic point of view</h4>
           <p>
@@ -136,7 +136,7 @@ export default function Home() {
             grateful about how much typography taught me.
           </p>
         </div>
-        <div className={s.content}>
+        <div id="to-share" className={s.content}>
           <h3 className={s.title}>What I wanna do.</h3>
           <br />
           <p>
@@ -244,7 +244,7 @@ export default function Home() {
             broadly here.
           </p>
         </div>
-        <div className={s.content}>
+        <div id="why" className={s.content}>
           <h3 className={s.title}>Why I’m here. </h3>
           <h4 className={s.subtitle}>The threads of Rylei.</h4>
           <p>

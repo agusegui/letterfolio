@@ -10,6 +10,7 @@ import { CustomHead } from 'components/custom-head'
 import { Footer } from 'components/footer'
 import { Header } from 'components/header'
 import { Intro } from 'components/intro'
+import { Navigation } from 'components/navigation'
 import { Scrollbar } from 'components/scrollbar'
 import { useStore } from 'lib/store'
 import { useRouter } from 'next/router'
@@ -97,6 +98,8 @@ export function Layout({
         {isTouchDevice === false && <Cursor />}
         {isTouchDevice === false && <Scrollbar />}
         <Header ref={ref} />
+        <Navigation />
+
         <main className={s.main}>{children}</main>
         <Footer />
       </div>

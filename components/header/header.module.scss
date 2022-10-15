@@ -36,5 +36,12 @@
       display: flex;
       align-items: center;
     }
+    .right {
+      position: relative;
+      text-align: right;
+
+      .chapters {
+      }
+    }
   }
 }
