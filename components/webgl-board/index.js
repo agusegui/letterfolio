@@ -161,6 +161,7 @@ function Poster({ args, url, ...props }) {
   return (
     <>
       <mesh
+        // data-cursor="pointer"
         ref={ref}
         onClick={(e) => (e.stopPropagation(), click(!clicked))}
         // onPointerOver={(e) => (e.stopPropagation(), hover(true))}
@@ -449,37 +450,37 @@ function Board() {
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/bent/bent1.png"
-          position={[-1.1, -21, -0.01]}
+          position={[-1.1, -20, -0.01]}
           scale={0.5}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/bent/bent2.png"
-          position={[-1.1, -21.5, -0.5]}
+          position={[-1.1, -20.5, -0.5]}
           scale={0.5}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/bent/bent3.png"
-          position={[-1.3, -21.7, -0.01]}
+          position={[-1.3, -20.7, -0.01]}
           scale={0.5}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/bent/bent4.png"
-          position={[-1.3, -22.3, -0.3]}
+          position={[-1.3, -21.3, -0.3]}
           scale={0.5}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/bent/bent5.png"
-          position={[-1.2, -22, -0.6]}
+          position={[-1.2, -21, -0.6]}
           scale={0.5}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/bent/bent6.png"
-          position={[-1.1, -22.8, -0.01]}
+          position={[-1.1, -21.8, -0.01]}
           scale={0.5}
         />
         {/* 
@@ -503,6 +504,108 @@ function Board() {
           position={[-1, -24.2, -0.01]}
           scale={0.3}
         /> */}
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/1.png"
+          position={[-1.4, -24, -0.5]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/illus/2.png"
+          position={[-1, -23.8, -0.3]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/3.png"
+          position={[-0.5, -23.3, -0.3]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/4.png"
+          position={[-0.5, -23.8, -0.2]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/5.png"
+          position={[-0.7, -24.1, -0.1]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/6.png"
+          position={[-0.7, -24.5, -0.4]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/7.png"
+          position={[-0.2, -24.6, -0.3]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/8.png"
+          position={[-0.3, -24.1, -0.1]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 0.6, 64, 64]}
+          url="/illus/9.png"
+          position={[-0.1, -23.6, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1.3, 1, 64, 64]}
+          url="/illus/10.png"
+          position={[0.1, -23.3, -0.5]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/11.png"
+          position={[0.6, -23.3, -0.4]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/12.png"
+          position={[0.2, -24, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/13.png"
+          position={[0.5, -23.6, -0.3]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/14.png"
+          position={[0.7, -24, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/15.png"
+          position={[0.3, -24.5, -0.4]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/16.png"
+          position={[0.8, -24.5, -0.6]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/illus/17.png"
+          position={[1.2, -23.5, -0.7]}
+          scale={0.5}
+        />
       </group>
     </>
   )

@@ -32,7 +32,8 @@
 
     &.pointer {
       transform: translate(-50%, -50%) scale(0.5);
-      background-color: var(--gray);
+      background-color: var(--black);
+      border-color: var(--black);
     }
   }
 }
