@@ -34,7 +34,7 @@ export default function Home() {
             <WebGLBoard />
           </ClientOnly>
         </div>
-        <div className={s.intro}>
+        <div id="hom" className={s.intro}>
           <p>
             Hey Lettermatic team! Greetings from Europe! I’ts really a boost to
             being in contact with you on such an amazing oportunity!
@@ -136,6 +136,7 @@ export default function Home() {
             grateful about how much typography taught me.
           </p>
         </div>
+        {/* <div style={{ minHeight: '100vh' }}></div> */}
         <div id="to-share" className={s.content}>
           <h3 className={s.title}>What I wanna do.</h3>
           <br />

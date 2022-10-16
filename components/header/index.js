@@ -34,7 +34,7 @@ export const Header = forwardRef((_, ref) => {
               />
             </g>
           </svg>
-          <Link href="/">Agustín Seguí</Link>
+          <Link href="#hom">Agustín Seguí</Link>
         </div>
         <div className={s.right}>
           <Link href="/">Contact Me</Link>

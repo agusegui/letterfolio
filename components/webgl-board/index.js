@@ -58,17 +58,14 @@ uniform vec2 uResolution;
 varying vec2 vUv;
 varying vec3 vNormal;
 
-float random(vec2 co){
-    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
-}
+
 
 void main() {
     vec2 viewportUv = gl_FragCoord.xy / uResolution.xy;
-    vec2 newUV = (vUv - vec2(0.5)) * uResolution.xy + vec2(0.5);
     vec4 pic = texture(uTexture, vUv);
-    // pic += random(vUv + uTime * 0.03 ) * 0.2; // NOISE
 
     gl_FragColor = vec4(pic);
+    
   }
 `
 
@@ -178,6 +175,7 @@ function Poster({ args, url, ...props }) {
           vertexShader={vertexShader}
           uniforms={uniforms}
           side={DoubleSide}
+          transparent={true}
         />
       </mesh>
     </>
@@ -201,7 +199,7 @@ function Board() {
     <>
       <group ref={refe} position={[0, -1, -1]}>
         <Text
-          position={[-1.38, -2.38, 0]}
+          position={[-1.38, -1.38, 0]}
           fontSize={0.03}
           font={url}
           glyphGeometryDetail={12}
@@ -213,131 +211,298 @@ function Board() {
           <meshBasicMaterial color={'gray'} />
         </Text>
         <Poster
+          args={[1.4, 1, 64, 64]}
+          url="/kinematics/1.png"
+          position={[-1.15, -1.5, -0.01]}
+          scale={0.6}
+        />
+        <Poster
           args={[1, 1.33, 64, 64]}
-          url="/1.png"
-          position={[-1.15, -2, -0.01]}
+          url="/kinematics/2.png"
+          position={[-1, -2.1, -0.3]}
           scale={0.6}
         />
         <Poster
-          args={[1.33, 0.75, 64, 64]}
-          url="/folio1.png"
-          position={[-1.15, -3, -0.01]}
+          args={[0.6, 1, 64, 64]}
+          url="/kinematics/3.png"
+          position={[-1.2, -2.3, -0.05]}
           scale={0.6}
         />
         <Poster
-          args={[0.5, 1, 64, 64]}
-          url="/foliomobileprocess.png"
-          position={[-1.3, -3.7, -0.05]}
+          args={[1, 1.33, 64, 64]}
+          url="/kinematics/4.png"
+          position={[-1, -2.8, -0.01]}
           scale={0.6}
         />
         <Poster
-          args={[0.5, 1, 64, 64]}
-          url="/foliomobilework.png"
-          position={[-1, -3.7, -0.05]}
+          args={[1, 1.33, 64, 64]}
+          url="/kinematics/5.png"
+          position={[-1.5, -3.1, -0.6]}
           scale={0.6}
         />
         <Poster
-          args={[1.33, 0.75, 64, 64]}
-          url="/folio2.png"
+          args={[1, 1.33, 64, 64]}
+          url="/kinematics/6.png"
+          position={[-1, -3.6, -0.1]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/kinematics/7.png"
+          position={[-1.3, -3.8, -0.3]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/kinematics/8.png"
           position={[-1.15, -4.4, -0.01]}
           scale={0.6}
         />
+        {/* 
+        SEPARATOR
+         */}
         <Poster
           args={[1, 1.33, 64, 64]}
-          url="/2.png"
-          position={[-1.15, -5.3, -0.01]}
-          scale={0.6}
-        />
-        <Poster
-          args={[1.33, 1, 64, 64]}
-          url="/noirrender.png"
+          url="/noir/noir1.png"
           position={[-1.15, -6, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/noir2.png"
+          position={[-1.15, -6.6, -0.2]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/noir3.png"
+          position={[-1.33, -7, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/noir4.png"
+          position={[-1.05, -7.2, -0.4]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/noir5.png"
+          position={[-1.3, -7.5, -0.2]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/noir6.png"
+          position={[-1.2, -8, -0.4]}
+          scale={0.6}
+        />
+
+        <Poster
+          args={[1.33, 1, 64, 64]}
+          url="/noir/gallery/g7.png"
+          position={[-1.5, -8.5, -0.7]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/gallery/g8.png"
+          position={[-1.1, -8.8, -0.5]}
+          scale={0.6}
+        />
+        <Poster
+          args={[0.8, 0.8, 64, 64]}
+          url="/noir/gallery/g2.png"
+          position={[-1, -9.3, -0.3]}
+          scale={0.4}
+        />
+        <Poster
+          args={[1, 1, 64, 64]}
+          url="/noir/gallery/g6.png"
+          position={[-1.15, -9.6, -0.2]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/gallery/g4.png"
+          position={[-1.6, -9.2, -0.7]}
           scale={0.6}
         />
         <Poster
           args={[1.33, 1, 64, 64]}
-          url="/noirrender2.png"
-          position={[-1.15, -7, -0.01]}
+          url="/noir/gallery/g1.png"
+          position={[-1.5, -9.9, -0.7]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/noir/gallery/g5.png"
+          position={[-1.3, -10.4, -0.4]}
+          scale={0.6}
+        />
+
+        {/* 
+        SEPARATOR
+         */}
+        <Poster
+          args={[1, 1.1, 64, 64]}
+          url="/guitar/guitar1.png"
+          position={[-1.15, -11.6, -0.01]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/guitar/guitar2.png"
+          position={[-1, -11.9, -0.5]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/guitar/guitar3.png"
+          position={[-1.15, -12.6, -0.2]}
+          scale={0.6}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/guitar/guitar4.png"
+          position={[-1.4, -12.2, -0.3]}
           scale={0.6}
         />
         <Poster
           args={[1, 1, 64, 64]}
-          url="/scrabble.png"
-          position={[-1.15, -8, -0.01]}
+          url="/guitar/guitar5.png"
+          position={[-1.15, -13.2, -0.01]}
           scale={0.6}
         />
         <Poster
           args={[1, 1.33, 64, 64]}
-          url="/scrabble2.png"
-          position={[-1.15, -9, -0.01]}
+          url="/guitar/guitar6.png"
+          position={[-1.15, -13.9, -0.01]}
+          scale={0.6}
+        />
+        {/* 
+        SEPARATOR
+         */}
+        <Poster
+          args={[1, 0.56, 64, 64]}
+          url="/web/web1.png"
+          position={[-1.15, -15.5, -0.01]}
           scale={0.6}
         />
         <Poster
-          args={[1, 1.33, 64, 64]}
-          url="/3.png"
-          position={[-1.15, -10, -0.01]}
+          args={[1, 0.56, 64, 64]}
+          url="/web/web2.png"
+          position={[-1.15, -16, -0.01]}
           scale={0.6}
         />
         <Poster
-          args={[1, 1.33, 64, 64]}
-          url="/4.png"
-          position={[-1.15, -11, -0.01]}
+          args={[0.56, 1.1, 64, 64]}
+          url="/web/web3.png"
+          position={[-1.3, -16.5, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[0.56, 1.1, 64, 64]}
+          url="/web/web4.png"
+          position={[-1, -16.7, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 0.56, 64, 64]}
+          url="/web/web5.png"
+          position={[-1.15, -17.2, -0.01]}
           scale={0.6}
         />
         <Poster
-          args={[1, 1.33, 64, 64]}
-          url="/5.png"
-          position={[-1.15, -12, -0.01]}
+          args={[0.56, 1.1, 64, 64]}
+          url="/web/web6.png"
+          position={[-1.3, -17.9, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[0.56, 1.1, 64, 64]}
+          url="/web/web7.png"
+          position={[-1, -17.7, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 0.56, 64, 64]}
+          url="/web/web8.png"
+          position={[-1.15, -18.4, -0.01]}
           scale={0.6}
         />
         <Poster
-          args={[1, 1.33, 64, 64]}
-          url="/6.png"
-          position={[-1.15, -13, -0.01]}
+          args={[1, 0.56, 64, 64]}
+          url="/web/web9.png"
+          position={[-1.15, -18.9, -0.01]}
           scale={0.6}
+        />
+        <Poster
+          args={[1, 0.56, 64, 64]}
+          url="/web/web10.png"
+          position={[-1.15, -19.4, -0.01]}
+          scale={0.6}
+        />
+        {/* 
+        SEPARATOR
+         */}
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/bent/bent1.png"
+          position={[-1.1, -21, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/bent/bent2.png"
+          position={[-1.1, -21.5, -0.5]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/bent/bent3.png"
+          position={[-1.3, -21.7, -0.01]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/bent/bent4.png"
+          position={[-1.3, -22.3, -0.3]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/bent/bent5.png"
+          position={[-1.2, -22, -0.6]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/bent/bent6.png"
+          position={[-1.1, -22.8, -0.01]}
+          scale={0.5}
+        />
+        {/* 
+        SEPARATOR
+         */}
+        {/* <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/poli/po1.png"
+          position={[-1.1, -24, -0.4]}
+          scale={0.5}
+        />
+        <Poster
+          args={[1, 1.33, 64, 64]}
+          url="/poli/po2.png"
+          position={[-1.3, -24.3, -0.2]}
+          scale={0.5}
         />
         <Poster
           args={[1, 1, 64, 64]}
-          url="/illu.png"
-          position={[-1.3, -13.9, -0.5]}
-          scale={0.6}
-        />
-        <Poster
-          args={[1, 1, 64, 64]}
-          url="/illu2.png"
-          position={[-1, -14.1, -0.2]}
-          scale={0.6}
-        />
-        <Poster
-          args={[1.2, 1.2, 64, 64]}
-          url="/illu3.png"
-          position={[-1.15, -14.5, -0.01]}
-          scale={0.6}
-        />
-        <Poster
-          args={[0.42, 1.33, 64, 64]}
-          url="/bent1.png"
-          position={[-1.1, -17.3, -0.01]}
-          scale={0.6}
-        />
-        <Poster
-          args={[0.42, 1.33, 64, 64]}
-          url="/bent2.png"
-          position={[-1.3, -17.1, -0.2]}
-          scale={0.6}
-        />
-        <Poster
-          args={[0.42, 1.33, 64, 64]}
-          url="/bent3.png"
-          position={[-1, -17.1, -0.2]}
-          scale={0.6}
-        />
-        <Poster
-          args={[0.42, 1.33, 64, 64]}
-          url="/bent4.png"
-          position={[-1.6, -17.3, -0.5]}
-          scale={0.6}
-        />
+          url="/poli/po3.png"
+          position={[-1, -24.2, -0.01]}
+          scale={0.3}
+        /> */}
       </group>
     </>
   )
