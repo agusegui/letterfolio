@@ -33,7 +33,7 @@ export const Navigation = () => {
       <Link href="#about-me">About me</Link>
       <Link href="#to-share">What to share</Link>
       <Link href="#why">Why Im Here</Link>
-      <Link href="#why">Colophon</Link>
+      <Link href="#colophon">Colophon</Link>
     </div>
   )
 }
