@@ -46,203 +46,254 @@ export default function Home() {
 
         <div id="intro" className={s.content}>
           <p className="firstletter">
-            Reading such a job post was already valuable to me, because it
-            touched me deeply in a time where I’m struggling to find jobs that
-            have room for share my values ​​and build something with love.
+            Reading such a job post was already valuable to me,because it touch
+            me deeply in a time where I’m struggling to find jobs that have room
+            to share my values ​​and build something with love.
             <br />
-            <br />I only apply to positions that makes me feel in home and
-            valued as a person, not as an asset. I know. It’s hard to find jobs
-            in this way, but I’m sure that every project I’ve participated came
-            with real people and a kind of energy that opens a creative output
-            without limits. <br />
             <br />
-            A project to play with passion? Based in trust and room for
-            creativity? I’m in. Here I feel the purpouse, the love and the
+            I only apply to positions that make me feel at home and valued as a
+            person, not as an asset. I know, It’s hard to find jobs in this way,
+            but I’m sure that every project I’ve participated has brought me
+            with real people and a kind of energy that opens creative outputs
+            without limits.
+            <br />
+            <br />
+            A project to play with passion? A project based in trust and room
+            for creativity? I’m in! Here I feel the purpose, the love and the
             long-term spirit. Even if the job were just for a day, I would love
-            to work with such people. <br />
-            <br />
-            So. Thank you very much! I’m feeling better now, just reading that
-            kindful way to call other people to join a project you have created
-            close together from the very scratch. I feel I’ll have the same
-            spirit if my projects go well enough to hire other people. <br />
-            <br />
-            Now, let me introduce you about myself with the same transparency
-            and authenticity that brought me here. I don’t know how long it will
-            be, but I’m sory in advance if it turns out a long reading.
+            to work with such people.
             <br />
             <br />
+            So thank you very much! Just reading such a kindful way to call to
+            join your project means a lot to me. It gives me hope about the
+            industry and I’ll share the same spirit if my projects go well
+            enough to hire other people.
+            <br />
+            <br />
+            Now, let me introduce myself with the same transparency and
+            authenticity that brought me here. I don’t know how long it will be,
+            but I’m sorry in advance if it turns out a long reading. <br /> I
+            made this just for you!
           </p>
         </div>
 
         <div id="about-me" className={s.content}>
-          <h3 className={s.title}>About me</h3>
-          <h4 className={s.subtitle}>From a type-graphic point of view</h4>
+          <h3 className={s.title} id="about-me">
+            About me.
+          </h3>
+          <h4 className={s.subtitle}>Abstract.</h4>
           <p>
-            I’m not comfortable with fancy titles or rigid skillsets. I’m a
-            person who breath with arts, culture, music and everything that
-            usually have a visual expression appended.
+            My vision is driven by strategy, meaning, emotion and simplicity. I
+            stand for good work, long lasting relationships, deep culture and
+            sustainability. My dream work is driven by research, strategy,
+            curiosity and meaningful content.
             <br />
             <br />
-            Anyway, I wouldn't apply if I wasn't a kind of graphic/visual
-            designer. It’s just that feels better when we can honor the
-            generalist nature of the design practice, especially as a cultural
-            expression, rather than a static job role.
+            I love building value thru the process of art direction, branding,
+            visual design and creative development. My approach is adaptive to
+            every project, with deep care on vision and identity.
             <br />
             <br />
-            In that sense, as a creator, I’m a collage itself. Curiosity makes
+            I need to work in close partnership with people and teams along the
+            process. Always standing for clear communication, trust and
+            transparency. I work from my home-studio to manage a
+            versatile-focused workflow, in balance with a healthy life close to
+            my family.
+            <br />
+            <br />
+          </p>
+          <h4 className={s.subtitle}>From a type-graphic point of view.</h4>
+          <p>
+            I’m a person who breathes arts, culture, music and everything that
+            has a visual expression appended to. I’m a visual designer and to be
+            honest I’m not comfortable with fancy titles and rigid skillsets. It
+            feels better to me when we can honor the generalist nature of the
+            design practice, especially as a cultural expression rather than as
+            a static job role.
+            <br />
+            <br />
+            In this sense, as a creator, I’m a collage myself. Curiosity makes
             me feel human; the study of different things makes me grow as a
-            person and as an artist. I love to collaborate and build value as
-            passionly undesrtanding the view and sense of other people.
+            person the same as an artist. I love collaborating and building real
+            value with other people, especially understanding their view and
+            inner worlds.
             <br />
             <br />
-            As a designer I like so much the web as a space for creation,
-            expression and interaction with people and experiences. I love
-            websites, but I’ve discovered so much inspiration from the print and
-            editorial sides of graphic design. I’ve fallen in love with the big
-            and deep fascinating worlds behind typography. I also like to draw
-            (I’m in love with your characters!) and make illustrations for many
-            purpouses, but also having an interest on the marketing side of
-            things; while coding my own projects (like this one); and playing
-            with other fields like motion, 3D visuals, creative coding,
-            photography, music.
+            As a designer I picture the web as a space for interactive creation.
+            There are so many new tools and possibilities on the browser right
+            now; and while we are living a kind of a revival of the flash era, I
+            think Typography is having a serious role in this scene. I feel that
+            golden times are coming in the near future, if we are’t already
+            living them!
+            <br />
+            <br />
+            I love websites but I’ve discovered so much inspiration from the
+            print and editorial sides of graphic design too. While going through
+            this process I’ve fallen in love with the fascinating worlds behind
+            typography. Because we can play with letters on the web, just like
+            we can put it on the street, or use it for advertisement, for art...
+            for many purposes! Typography is solving so many problems on each
+            milisecond of human interaction activity. And I wanna know more
+            about it!
+            <br />
+            <br />
+            I also like drawing and making illustrations for many purposes—I’m
+            in love with your characters!—It’ll be a real pleasure to have space
+            and time to play more often on the fun mix of illustration and
+            typography.
+            <br />
+            <br />
+            I’ts natural to me being constantly curious about how to make things
+            like coding my own projects (like this one) and playing with other
+            fields like motion, 3D visuals, photography, music. With my involved
+            purpose of building things I also like being involved in the
+            marketing side of the projects too. The thing is that I feel that
+            every tool is just a medium.
+            <br />
+            <br />
+            The real thing is in the content: The value and the emotional core.
             <br />
             <br />
             And that is why I’m here. I’ve worked in many different projects
-            with different purposes and different problems to solve, but always
-            with an identity to care, to enhance and to make it breath.
-            <br />
-            <br />
-            The thing is that I feel that every tool is just a medium. The real
-            thing is in the content. The emotional core.
-            <br />
-            <br />
-            And that is why I’m here. I’ve worked in many different projects
-            with different purposes and different problems to solve, but always
-            with an identity to care, to enhance and to help it to grow and
-            breath. Each project was so different that I couldn’t have the same
-            model to go with all of them. And here is when I feel that
-            typography is something that works similar, especially in that sense
-            of having so diferent worlds and systems, but based on the same
-            characters!
+            with different purposes and different problems to solve. All
+            different by nature but with something in common: an identity to
+            care, to enhance and to help it breath and grow. Each project was so
+            different that I couldn’t have the same model to go with all of
+            them. And here is when I feel that typography is something that
+            works similar, especially in this sense of having so many different
+            worlds and systems based on the same characters!
             <br />
             <br />
             I’ve worked in Music, Gastronomics, Youtube Content, Festivals,
-            Artists, and Magazines. Now I’m working on the web. And I’ve
-            realized that every project was touched for some typographic
-            decition -sometimes really bad, sometimes better- but finally ending
-            in a present moment where I find myself not being able to desing
-            anything without apreciating the voices, the personalities and the
-            structures that live inside a typeface. It blows my mind! I’m so
-            grateful about how much typography taught me.
+            Artists and Magazines. Now I’m working on the web and I’ve realized
+            that every project has been crossed by some typographic
+            decision—sometimes worse, sometimes better—but finally ending on the
+            present moment where I find myself not being able to desing anything
+            without apreciating the voices, the personalities and the structures
+            that live inside a typeface. It blows my mind! I’m so grateful about
+            how much typography taught me.
           </p>
         </div>
         {/* <div style={{ minHeight: '100vh' }}></div> */}
         <div id="to-share" className={s.content}>
-          <h3 className={s.title}>What I wanna do.</h3>
+          <h3 className={s.title}>What I wanna share.</h3>
           <br />
+
           <p>
-            With this feeling I think I can share with you so many things. I
-            learned to care a lot about identity because typography, and that
-            maked me being closely looking for type related brands and projects
-            that fits me. Actually, I’m building a portfolio for being around
-            projects I like. And the projects I have on mind the most are type
-            foundries! Not to design typefaces, but to play and build value with
-            them; something like the brand side, the community side and the
-            oportunities around...
+            With this feeling I think I can share with you so many things.
+            Typography taught me to care a lot about identity and lately that
+            made me look more closely for type related brands and typography
+            projects that fit my vision. Actually, I’m building a portfolio to
+            be engaged in projects I like. And turns out that the projects I
+            have first in my mind are type foundries! Not to design typefaces
+            but to play and build value with them; something like working on the
+            brand side, the community enviroments and other oportunities around
+            too...
             <br />
             <br />
-            So, sooner or later I was going to appear somewhere in your inbox,
+            Sooner or later I was going to appear somewhere in your inbox,
             because you are on top of my list! But now, especially with this job
-            advertisment on line, I couldn’t wait to finish that entire
-            porfolio. So, I will share some parts that speaks about my vision.
+            advertisement online, I couldn’t wait to finish my entire porfolio.
+            So, I will share some parts that speak about how I can help you and
+            why I wanna join you.
             <br />
             <br />
           </p>
-          <h4 className={s.subtitle}>From a type-graphic point of view</h4>
+          <h4 className={s.subtitle}>
+            What I would love to do. Where is value.
+          </h4>
           <p>
-            Before all, I think that Lettermatic has a solid brand, and you are
-            looking for someone that can expand and remix the concept. And that
-            sounds very nice to me. I like to digest brands and then think on
-            ways to distribute his voice in different ways, always working
-            without breaking his core authenticity.
+            I think that Lettermatic has a solid brand and that you are looking
+            for someone who can expand and remix the concept. And that starting
+            point sounds very nice to me. I feel good at digesting brands,
+            thinking how to distribute its voice in different ways and always
+            caring about his core authenticity.
             <br />
             <br />
-            So, first of all I’m eager to make my research about you -the
-            people- and then about the brand. I think I’ll learn so many new
-            things on a project like this, and I’m feeling already sure about
-            it.
+            So, first of all I’m eager to make my research about you—the
+            people—and then about the brand. I think I’ll learn so many new
+            things with your projects and I’m already feeling sure about it.
             <br />
             <br />
-            Then I’ll take an account of the basic necessities that you are
-            looking for. I’ve read closely on the kind of work you describe and
-            I can say some things about it as follows:
+            Then I’ll take an account of the basic needs that you are looking
+            for. I’ve closely read the kind of work you described and I wanna
+            share with you some things about it as follows:
           </p>
           <ul>
             <li>
-              I love to think on case studies. I learned a LOT with yours.
+              I love case studies. I learned a LOT with yours and I know I will
+              learn a lot more if I’m fully involved.
             </li>
             <li>
-              I’ve a lot of experience on social media, so I can share my vision
+              I’ve a lot of experience on social media so I can share my vision
               about it and expand our mindset.
             </li>
             <li>
-              I love to make posters and graphics, especially with type. Kind of
-              a dream job for me.
+              I love making posters and graphics, especially with type. Kind of
+              a dream job for me!
             </li>
             <li>
-              I enjoy to present and pitch things visually. My communication
-              background loves it.
+              I enjoy to visually present and pitch things. My communication
+              background loves it!
             </li>
             <li>
-              I need to do research and undesrtand history to go deeper on a
-              given process. My journalistic soul helps a lot.
+              I need to do research and understand history and context to go
+              really deep on a given process. My journalistic soul helps a lot.
             </li>
           </ul>
           <p>
-            By my side, I can go further, always in line with objectives and
-            scope.
+            By my side, I can go further, always aligned with objectives and
+            scope. I like thinking broadly when we are speaking about a brand,
+            especially on how it can be expressed around the spaces and cultures
+            we are socially involved.
           </p>
           <ul>
             <li>
-              I like to put letters to dance. Motion, animation, kinetic things,
-              variable possibilities, interpolations, svg, lottie, web fonts,
-              distance field fonts and glsl, etc. (If you see this page on
-              desktop you have examples on the left gallery).
+              I like to put letters to dance. Motion posters, animation, kinetic
+              things, variable possibilities, interpolations, svg, lottie, web
+              fonts, distance field fonts and glsl, etc. (If you see this page
+              on desktop you have examples on the left gallery).
             </li>
             <li>
-              I know the basics of typography, and a little more. Here on the
-              left you can see a glimpse of a personal sans serif typeface that
-              I built for fun, research and practice: AS Noir.
+              I know the basics of typography and a little bit more. I love
+              studying and collecting references. Here on the left you can see a
+              glimpse of a personal sans serif typeface that I’ve built for fun,
+              research and practice: Its called AS Noir. Although its—yes I
+              know—another all caps geometric sans serif, I’ve imprinted some
+              personal details that I was looking for in that genre.
             </li>
             <li>
-              I like to make specimens. My little own font maked me realize
-              that. Not only on print but also in web (interactive).
+              My little own fonts made me realize that I like making—and working
+              with—specimens. And not only on print but also in the web
+              (interactive). I’m a big fan of type-related websites, like
+              typefoundries, blogs, catalogues, web-specimens, interactive
+              experiences and on. I see so much fun there.
             </li>
             <li>
-              I love to write things. I’m working to get better at english, but
-              spanish is my native laguage and I think there are a big
-              community. I’m writing a blog (eng) to release with my personal
-              website. Hope it will be live soon!
+              I love writing things—maybe you already know it?— I’m writing a
+              blog to release together with my personal website. Hope it will be
+              live soon! Since I am a Spanish native speaker I’m working to get
+              better at English.
             </li>
             <li>
               I’ve produced video content and podcasts. I’ve founded a Youtube
-              Channel for a flamenco guitarist from scratch and we grow to +30K
-              in one year and with such a difficult subjet. Now keeps growing at
-              pace.
+              Channel for a flamenco guitarist (from scratch and with such a
+              difficult subject) and we grew to +30K in one year. Now keeps
+              growing at a good pace.
             </li>
           </ul>
           <p>
-            Well. I know that maybe these are already so many things and I don’t
+            Well, I know that maybe these are already many things and I don’t
             pretend that we are going to make all of it at the same time. I’m
-            just looking in to my potential and experiences to share the kind of
-            things I think can help the most to distribute some concepts of the
-            brand. <br />
+            just looking in to my potential and experiences to share the things
+            I think can help the most to distribute some concepts of the brand.
+            <br />
             <br />I don’t have a cool rèsumè. I don’t have collabs with fancy
-            brands. With so spreadly knowledge, sometimes I suffer a lot in my
-            personal career because there are not many places with room for some
-            generalist people as me, especially in this world of extreme
+            brands. And with so spreadly knowledge, sometimes I suffer a lot in
+            my personal career because there are not many places with room for
+            some generalist people as me, especially in this world of extreme
             specificity. So, I’m already glad of having the oportunity to think
-            broadly here.
+            broadly here and then going further step by step.
           </p>
         </div>
         <div id="why" className={s.content}>
@@ -278,58 +329,79 @@ export default function Home() {
           </p>
           <h4 className={s.subtitle}>My journey with typography.</h4>
           <p>
-            I have dangerous levels of curiosity and I love to work with enough
-            research. I like the feeling of diving deeper on each process,
-            always learning things and connecting the dots that draws the whole
-            circle of the culture we live in.
-            <br />
-            <br />
-            I’ve wondering so many years if I can find a place where I can
+            I’ve been wondering so many years if I can find a place where I can
             integrate all the things that makes a sense around interdisciplinary
-            fields I live and breathe. I love everything about interpolation,
-            textures, composition, systems, orchestation, rithm. don’t matters
-            in what discipline. But I’m thinking that typography is getting
-            around so many places I love and I have so much fun.
-            <br />
-            <br />I think that visual design is nothing if we can’t appreciate
-            the different parts that makes it valuable. And now I recognize that
-            I can’t design anything without think properly about typography.
-            From that point in my life I just can’t stop feeling things while
-            letters are in my field of view.
+            fields where I live and breathe.
             <br />
             <br />
-            While I’m falling in love with type related possibilities -both in
-            print and web canvases- I was wondering if there could be an
+            I love everything about interpolation, textures, composition,
+            systems, orchestation, rhythm... it doesn’t matter in what
+            discipline. But I’m thinking that typography is getting around so
+            many places I love and where I find so much fun. I just can’t stop
+            feeling things when some wild letters appear in my field of view.
+            And I wanna more of this thing!
+            <br />
+            <br />
+            While I’m falling in love with type related possibilities—both, in
+            print and web canvases—I was wondering if there could be an
             oportunity to work with typography without being a formal
-            typographer. I love to draw letters, I have some personal -and very
-            noob- projects that changed completly my view on everything related
-            to design and communication. I don’t know if I can have a foundry
-            some day. Today I can’t afford a mac (for glyphs app), so I tried to
-            make something with a mix of Illustrator, Figma and Font Forge. Kind
-            of a hell but it was worthy.
+            typographer. I love drawing letters, especially geometric styles
+            that looks cool with transformations and distortion. I don’t know if
+            I can have a foundry some day. Actually, right now I can’t afford a
+            Mac (for Glyphs app), so I tried to make something with a mix of
+            Illustrator, Figma and Font Forge. Kind of a hell but it was worthy.
+            I’m very curious about your custom software by the way.
             <br />
             <br />
-            The Lettermatic website and the twitter threads helped me a lot on
-            this project. It’s difficult to find type related content that
-            explains so subtle things that we can encounter throug a complex
-            system like Parclo, to put an example.
+            The thing is that going through the rabbit hole of typography
+            theory, history, evolution and all the tech behind it—and then also
+            building some begginer-friendly typefaces myself—is changing
+            completely my view on everything related to design and
+            communication. The Lettermatic website and the twitter threads
+            helped me a lot on this projects. It’s difficult to find type
+            related content that explains so subtle things that we can encounter
+            through a complex system like Parclo, to put an example.
             <br />
             <br />
-            Although it’s -yes- another all caps geometric sans serif, I’ve
-            imprinted some personal details that I was looking for in that
-            genre. One thing I enjoyed a LOT is playing with the typeface and
-            making some specimens. I’m thinkin on type specimens not just as
-            static print catalogue, I also see a lot of great oportunities in
-            the motion and interactive languages of the web.
+            So I wanna be more involved on this amazing world of characters, and
+            I think this is a great oportunity for me. All the things I’ve
+            writen here made me think a lot, anyway. I hope this helped you to
+            know me the best from this very first moment.
+          </p>
+          <div id="colophon" className={s.content}></div>
+          <h3 className={s.title} id="colophon">
+            Colophon.{' '}
+          </h3>{' '}
+          <br />
+          <br />
+          <p>
+            If you have read this far I’m very-very-grateful. Even if there
+            isn’t a fit for the job, I’m here to know people and I’ll be amazed
+            if all of this just make us to share some thoughts.
+            <br />
+            <br />
+            This microwebsite was especially handcrafted for Lettermatic in
+            seven days, weekend included. The text is set in Parclo Sans v1.062
+            and Serif 1.077 using the student trial just for this project (as a
+            non-commercial work).
+            <br />
+            <br />
+            This site wouldn’t be possible withouth Satus, the code architecture
+            that Franco Arza and Studio Freight created as an OSS. The
+            development stack compounds Next.js and Vercel; with React Three
+            Fiber and Three.js (paper and visual effects).
+            <br />
+            (I don’t have time to test it on every device and making it
+            accessible as a real project should be. I hope it works as intended
+            and I apreciate if you visit it on desktop for the full experience).
           </p>
         </div>
+
         <div
           style={{
             height: '150vh',
           }}
-        >
-          hey
-        </div>
+        ></div>
         {/* <div id="rect">
           <div
             ref={(node) => {
