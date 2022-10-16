@@ -29,11 +29,21 @@ export default function Home() {
   return (
     <Layout theme={'light'}>
       <section className={s.home}>
-        <div className={s.gl}>
+        <div
+          // className={s.gl}
+          className={s.gl}
+        >
           <ClientOnly>
             <WebGLBoard />
           </ClientOnly>
         </div>
+        <h2 className={s.hero}>Hi!</h2>
+        <p className={s.disc}>
+          Please! Take a visit on desktop <br />
+          to see the gallery.
+          <br />
+          <br />
+        </p>
         <div id="hom" className={s.intro}>
           <p>
             Hey Lettermatic team! Greetings from Europe! I’ts really a boost to
@@ -397,11 +407,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div
-          style={{
-            height: '150vh',
-          }}
-        ></div>
+        <div className={s.outro}></div>
         {/* <div id="rect">
           <div
             ref={(node) => {

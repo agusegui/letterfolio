@@ -22,7 +22,7 @@ export function Scrollbar({}) {
       progress * (innerHeight - thumbHeight)
     }px,0)`
 
-    const string = `${Math.round(scroll / 100)}%`
+    const string = `${Math.round(progress * 100)}%`
     rectRef.current.innerHTML = string
   }, [])
 
@@ -69,6 +69,7 @@ export function Scrollbar({}) {
       <div id="rect">
         <div
           ref={rectRef}
+          className="hide-on-mobile"
           style={{
             position: 'fixed',
             right: '0',

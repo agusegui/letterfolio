@@ -2,6 +2,12 @@
 
 // hide native scrollbar
 
+#rect {
+  @include mobile {
+    display: none;
+  }
+}
+
 .scrollbar {
   position: fixed;
   right: 96px;
@@ -31,5 +37,8 @@
     // border-radius: desktop-vw(4px);
     // border: desktop-vw(1px) solid var(--black);
     cursor: grab;
+  }
+  @include mobile {
+    display: none;
   }
 }

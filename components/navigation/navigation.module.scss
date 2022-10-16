@@ -1,3 +1,4 @@
+@import 'styles/_functions';
 .navigation {
   pointer-events: all;
   display: flex;
@@ -24,5 +25,8 @@
     &:hover {
       opacity: 1;
     }
+  }
+  @include mobile {
+    display: none;
   }
 }

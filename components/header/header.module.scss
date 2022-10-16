@@ -21,6 +21,10 @@
   @include desktop {
     padding: 96px 192px 192px 192px;
   }
+  @include mobile {
+    padding: 24px;
+    font-size: 18px;
+  }
 
   .head {
     height: 60px;
