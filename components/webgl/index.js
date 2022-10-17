@@ -289,7 +289,7 @@ export function Demo({ tl, speed = 1 }) {
     []
   )
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     tl.to(
       matRef.current.uniforms.uProg,
       {
