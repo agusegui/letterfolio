@@ -70,10 +70,7 @@ void main() {
 `
 
 function Poster({ args, url, ...props }) {
-  // const state = useThree()
   const { width, height } = useWindowSize()
-  // const { advance, viewport } = useThree()
-  // const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
   const texture = useTexture(url)
 
@@ -161,11 +158,8 @@ function Poster({ args, url, ...props }) {
   return (
     <>
       <mesh
-        // data-cursor="pointer"
         ref={ref}
         onClick={(e) => (e.stopPropagation(), click(!clicked))}
-        // onPointerOver={(e) => (e.stopPropagation(), hover(true))}
-        // onPointerOut={(e) => (e.stopPropagation(), hover(false))}
         onPointerMissed={(e) => (e.stopPropagation(), click(null))}
         {...props}
       >
@@ -187,7 +181,6 @@ function Board() {
   const refe = useRef()
 
   useScroll(({ scroll, velocity, limit }) => {
-    // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
     const progress = mapRange(0, limit, scroll, 0, 25)
 
     refe.current.parent.position.y = progress
@@ -211,12 +204,7 @@ function Board() {
           {text}
           <meshBasicMaterial color={'gray'} />
         </Text>
-        {/* <Poster
-          args={[1.4, 1, 64, 64]}
-          url="/kinematics/1.png"
-          position={[-1.15, -1.5, -0.01]}
-          scale={0.5}
-        /> */}
+
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/kinematics/2.png"
@@ -637,8 +625,6 @@ export function WebGLBoard() {
 
   return (
     <Canvas camera={{ position: [0, 0, 2], fov: 35 }}>
-      {/* <Raf /> */}
-
       <Demo tl={tl} />
       <Board />
     </Canvas>

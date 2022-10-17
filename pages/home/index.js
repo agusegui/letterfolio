@@ -12,10 +12,7 @@ export default function Home() {
   return (
     <Layout theme={'light'}>
       <section className={s.home}>
-        <div
-          // className={s.gl}
-          className={s.gl}
-        >
+        <div className={s.gl}>
           <ClientOnly>
             <WebGLBoard />
           </ClientOnly>
@@ -386,26 +383,6 @@ export default function Home() {
         </div>
 
         <div className={s.outro}></div>
-        {/* <div id="rect">
-          <div
-            ref={(node) => {
-              setRef(node)
-              rectRef.current = node
-            }}
-            style={{
-              position: 'fixed',
-              right: '0',
-              padding: '12px',
-              bottom: '96px',
-              width: '192px',
-              height: '48px',
-              fontSize: '16px',
-              textAlign: 'center',
-              backgroundColor: '#fefbf5',
-              color: 'black',
-            }}
-          ></div>
-        </div> */}
       </section>
     </Layout>
   )

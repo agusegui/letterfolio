@@ -8,7 +8,6 @@ export const Intro = () => {
   const isMobile = useMediaQuery('(max-width: 800px)')
   const [isLoaded, setIsLoaded] = useState(false)
   const [scroll, setScroll] = useState(false)
-  const introOut = useStore(({ introOut }) => introOut)
   const setIntroOut = useStore(({ setIntroOut }) => setIntroOut)
   const lenis = useStore(({ lenis }) => lenis)
 

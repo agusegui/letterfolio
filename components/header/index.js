@@ -13,7 +13,6 @@ export const Header = forwardRef((_, ref) => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            // width="40"
             height="48"
             viewBox="0 0 56 64"
             className={s.logo}

@@ -259,7 +259,6 @@ export function Demo({ tl, speed = 1 }) {
   const { width, height } = useWindowSize()
   const isTouchDevice = useIsTouchDevice()
 
-  const ref = useRef()
   const matRef = useRef()
 
   const uniforms = useMemo(
@@ -323,8 +322,7 @@ export function Demo({ tl, speed = 1 }) {
       window.removeEventListener('mousemove', onMouseMove, false)
     }
   }, [speed])
-  useScroll(({ scroll, velocity, limit }) => {
-    // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
+  useScroll(({ scroll, limit }) => {
     const progress = mapRange(0, limit, scroll, 0, 24)
 
     matRef.current.uniforms.uProgress.value = progress
@@ -336,13 +334,7 @@ export function Demo({ tl, speed = 1 }) {
 
   return (
     <>
-      <mesh
-        scale={0.83}
-        position={[0.09, 0.2, 0]}
-        // onClick={(e) => console.log('click')}
-        // onPointerOver={(e) => console.log('hover')}
-        // onPointerOut={(e) => console.log('unhover')}
-      >
+      <mesh scale={0.83} position={[0.09, 0.2, 0]}>
         <Text
           fontSize={1}
           font={url}
