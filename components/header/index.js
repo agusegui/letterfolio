@@ -35,7 +35,7 @@ export const Header = forwardRef((_, ref) => {
           <button
             className={s.mail}
             onClick={() => {
-              navigator.clipboard.writeText('Copy this text to clipboard')
+              navigator.clipboard.writeText('agugalgui@gmail.com')
               setCopySuccess('Copied to clipboard!')
             }}
           >
