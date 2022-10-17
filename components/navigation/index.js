@@ -6,8 +6,8 @@ export const Navigation = () => {
     <div className={s.navigation}>
       <Link href="#intro">Intro</Link>
       <Link href="#about-me">About me</Link>
-      <Link href="#to-share">What to share</Link>
-      <Link href="#why">Why Im Here</Link>
+      <Link href="#to-share">Working together</Link>
+      <Link href="#why">The Why</Link>
       <Link href="#colophon">Colophon</Link>
     </div>
   )
