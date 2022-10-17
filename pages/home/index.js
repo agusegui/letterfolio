@@ -1,9 +1,6 @@
-import { useRect } from '@studio-freight/hamo'
 import { ClientOnly } from 'components/isomorphic'
-import { useScroll } from 'hooks/use-scroll'
 import { Layout } from 'layouts/default'
 import dynamic from 'next/dynamic'
-import { useRef, useState } from 'react'
 import s from './home.module.scss'
 
 const WebGLBoard = dynamic(
@@ -12,20 +9,6 @@ const WebGLBoard = dynamic(
 )
 
 export default function Home() {
-  const [hasScrolled, setHasScrolled] = useState()
-  const rectRef = useRef()
-  const [setRef, rect] = useRect()
-
-  useScroll(
-    ({ scroll }) => {
-      setHasScrolled(scroll > 10)
-
-      // const string = `${Math.round(scroll / 100 + 15)}%`
-      // rectRef.current.innerHTML = string
-    }
-    // [rect]
-  )
-
   return (
     <Layout theme={'light'}>
       <section className={s.home}>
