@@ -1,18 +1,11 @@
 import cn from 'clsx'
 import { Link } from 'components/link'
-import { useStore } from 'lib/store'
 import { forwardRef } from 'react'
-import shallow from 'zustand/shallow'
 import s from './header.module.scss'
 
 // const LTTR = dynamic(() => import('../../svg/letterlogo.svg'), { ssr: false })
 
 export const Header = forwardRef((_, ref) => {
-  const [navIsOpen, setNavIsOpen] = useStore(
-    (state) => [state.navIsOpen, state.setNavIsOpen],
-    shallow
-  )
-
   return (
     <header className={s.header} ref={ref}>
       <div className={cn('lb', s.head)}>
@@ -34,10 +27,10 @@ export const Header = forwardRef((_, ref) => {
               />
             </g>
           </svg>
-          <Link href="#hom">Agustín Seguí</Link>
+          <Link href="/">Agustín Seguí</Link>
         </div>
         <div className={s.right}>
-          <Link href="/">Contact Me</Link>
+          <Link href="mailto:agugalgui@gmail.com">Contact Me</Link>
         </div>
       </div>
     </header>
