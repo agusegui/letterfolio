@@ -7,7 +7,7 @@ import {
 import gsap from 'gsap'
 import { useScroll } from 'hooks/use-scroll'
 import { mapRange } from 'lib/maths'
-import { useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { useWindowSize } from 'react-use'
 import { Color, DoubleSide, Vector2 } from 'three'
 const url = '/fonts/pscu.woff'
