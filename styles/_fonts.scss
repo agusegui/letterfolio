@@ -45,6 +45,18 @@
   color: var(--dark);
 }
 
+.serif {
+  font-family: 'Parclo Serif Trial';
+
+  opacity: 0.6;
+}
+
+.serifi {
+  font-family: 'Parclo Serif Trial';
+  font-style: italic;
+  opacity: 0.6;
+}
+
 .firstletter::first-letter {
   // -webkit-initial-letter: 2;
   font-family: 'Parclo Serif Trial';

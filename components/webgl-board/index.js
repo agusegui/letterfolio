@@ -9,7 +9,7 @@ import { useMemo, useRef, useState } from 'react'
 import { useWindowSize } from 'react-use'
 import { DoubleSide, Vector2, Vector4 } from 'three'
 const url = '/fonts/psr.woff'
-const text = 'click to expand!'
+const text = 'click to expand'
 const vertexShader = `
 uniform float uTime;
 uniform float uProgress;
@@ -200,7 +200,7 @@ function Board() {
     <>
       <group ref={refe} position={[0, -1, -1]}>
         <Text
-          position={[-1.38, -1.38, 0]}
+          position={[-1.15, -1.7, 0]}
           fontSize={0.03}
           font={url}
           glyphGeometryDetail={12}
@@ -211,16 +211,16 @@ function Board() {
           {text}
           <meshBasicMaterial color={'gray'} />
         </Text>
-        <Poster
+        {/* <Poster
           args={[1.4, 1, 64, 64]}
           url="/kinematics/1.png"
           position={[-1.15, -1.5, -0.01]}
-          scale={0.6}
-        />
+          scale={0.5}
+        /> */}
         <Poster
           args={[1, 1.33, 64, 64]}
           url="/kinematics/2.png"
-          position={[-1, -2.1, -0.3]}
+          position={[-1.15, -2.1, -0.3]}
           scale={0.6}
         />
         <Poster

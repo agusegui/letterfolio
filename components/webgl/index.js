@@ -325,7 +325,7 @@ export function Demo({ tl, speed = 1 }) {
   }, [speed])
   useScroll(({ scroll, velocity, limit }) => {
     // const progress = clamp(0, mapRange(0, limit, scroll, 0, 100), 2)
-    const progress = mapRange(0, limit, scroll, 0, 15)
+    const progress = mapRange(0, limit, scroll, 0, 24)
 
     matRef.current.uniforms.uProgress.value = progress
   })

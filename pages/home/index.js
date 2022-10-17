@@ -56,34 +56,24 @@ export default function Home() {
 
         <div id="intro" className={s.content}>
           <p className="firstletter">
-            Reading such a job post was already valuable to me,because it touch
-            me deeply in a time where I’m struggling to find jobs that have room
-            to share my values ​​and build something with love.
-            <br />
-            <br />
-            I only apply to positions that make me feel at home and valued as a
-            person, not as an asset. I know, It’s hard to find jobs in this way,
-            but I’m sure that every project I’ve participated has brought me
-            with real people and a kind of energy that opens creative outputs
-            without limits.
+            Reading such a job post was already valuable to me, because it made
+            me feel at home and valued as a person, not as an asset. I was
+            wondering if there will be a place to work with people that have
+            room for values ​​and eager to build something with love.
             <br />
             <br />
             A project to play with passion? A project based in trust and room
-            for creativity? I’m in! Here I feel the purpose, the love and the
-            long-term spirit. Even if the job were just for a day, I would love
-            to work with such people.
-            <br />
-            <br />
-            So thank you very much! Just reading such a kindful way to call to
-            join your project means a lot to me. It gives me hope about the
-            industry and I’ll share the same spirit if my projects go well
-            enough to hire other people.
+            for creativity? A project full of typefaces? I’m in! Here I feel the
+            purpose and the long-term spirit. Your warmness made me feel
+            something like artisan vibes that gives me hope about the industry.
+            Even if the job were just for a day, I would love to team up and
+            build beautiful things with such people!
             <br />
             <br />
             Now, let me introduce myself with the same transparency and
-            authenticity that brought me here. I don’t know how long it will be,
-            but I’m sorry in advance if it turns out a long reading. <br /> I
-            made this just for you!
+            authenticity that brought me here. I hope this will help you to know
+            me the best from the very first moment. <br />
+            <br />I also made this for you!
           </p>
         </div>
 
@@ -91,8 +81,9 @@ export default function Home() {
           <h3 className={s.title} id="about-me">
             About me.
           </h3>
-          <h4 className={s.subtitle}>Abstract.</h4>
-          <p>
+          <br />
+          <br />
+          <p className="serifi">
             My vision is driven by strategy, meaning, emotion and simplicity. I
             stand for good work, long lasting relationships, deep culture and
             sustainability. My dream work is driven by research, strategy,
@@ -161,17 +152,18 @@ export default function Home() {
             every tool is just a medium.
             <br />
             <br />
-            The real thing is in the content: The value and the emotional core.
+            The real thing is in the content:
+            <br /> The value and the emotional core.
             <br />
             <br />
             And that is why I’m here. I’ve worked in many different projects
-            with different purposes and different problems to solve. All
-            different by nature but with something in common: an identity to
-            care, to enhance and to help it breath and grow. Each project was so
-            different that I couldn’t have the same model to go with all of
-            them. And here is when I feel that typography is something that
-            works similar, especially in this sense of having so many different
-            worlds and systems based on the same characters!
+            with different purposes and problems to solve. All different by
+            nature but with something in common: an identity to care, to enhance
+            and to help it breath and grow. Each project was so different that I
+            couldn’t have the same model to go with all of them. And here is
+            when I feel that typography is something that works similar,
+            especially in this sense of having so many different worlds and
+            systems based on the same characters!
             <br />
             <br />
             I’ve worked in Music, Gastronomics, Youtube Content, Festivals,
@@ -194,17 +186,16 @@ export default function Home() {
             Typography taught me to care a lot about identity and lately that
             made me look more closely for type related brands and typography
             projects that fit my vision. Actually, I’m building a portfolio to
-            be engaged in projects I like. And turns out that the projects I
-            have first in my mind are type foundries! Not to design typefaces
+            be more engaged in projects I like. And turns out that the projects
+            I have first in my mind are type foundries! Not to design typefaces
             but to play and build value with them; something like working on the
             brand side, the community enviroments and other oportunities around
             too...
             <br />
             <br />
-            Sooner or later I was going to appear somewhere in your inbox,
-            because you are on top of my list! But now, especially with this job
-            advertisement online, I couldn’t wait to finish my entire porfolio.
-            So, I will share some parts that speak about how I can help you and
+            Sooner or later I was going to appear somewhere in your inbox you
+            are up on my list! So I can't wait to finish my entire porfolio and
+            here I will share some parts that speak about how I can help you and
             why I wanna join you.
             <br />
             <br />
@@ -262,22 +253,23 @@ export default function Home() {
               I like to put letters to dance. Motion posters, animation, kinetic
               things, variable possibilities, interpolations, svg, lottie, web
               fonts, distance field fonts and glsl, etc. (If you see this page
-              on desktop you have examples on the left gallery).
+              on desktop you have examples on the header and the left gallery).
             </li>
             <li>
               I know the basics of typography and a little bit more. I love
-              studying and collecting references. Here on the left you can see a
-              glimpse of a personal sans serif typeface that I’ve built for fun,
-              research and practice: Its called AS Noir. Although its—yes I
-              know—another all caps geometric sans serif, I’ve imprinted some
-              personal details that I was looking for in that genre.
+              studying and collecting references. Here on the left gallery you
+              can find a glimpse of a personal sans serif typeface that I’ve
+              built for fun and practice: Its called AS Noir. And although
+              its—yes I know—another all caps geometric sans serif, I’ve
+              imprinted some personal details that I was looking for in that
+              genre.
             </li>
             <li>
               My little own fonts made me realize that I like making—and working
               with—specimens. And not only on print but also in the web
               (interactive). I’m a big fan of type-related websites, like
               typefoundries, blogs, catalogues, web-specimens, interactive
-              experiences and on. I see so much fun there.
+              experiences and on. I have so much fun there.
             </li>
             <li>
               I love writing things—maybe you already know it?— I’m writing a
@@ -301,7 +293,7 @@ export default function Home() {
             <br />I don’t have a cool rèsumè. I don’t have collabs with fancy
             brands. And with so spreadly knowledge, sometimes I suffer a lot in
             my personal career because there are not many places with room for
-            some generalist people as me, especially in this world of extreme
+            generalist people like me, especially in this world of extreme
             specificity. So, I’m already glad of having the oportunity to think
             broadly here and then going further step by step.
           </p>
@@ -311,8 +303,8 @@ export default function Home() {
           <h4 className={s.subtitle}>The threads of Rylei.</h4>
           <p>
             I know you worked with Studio Freight and Basement Studio. Great
-            people, excelent profesionals. I’m eager to share some work with
-            them because I share much of his vision.
+            people, excelent profesionals. I would love to work with them one
+            day.
             <br />
             <br />
             I’ve been introduced on Lettermatic trough Franco Arza, who
@@ -323,11 +315,11 @@ export default function Home() {
             deeper in the subtle details of the field.
             <br />
             <br />
-            Some threads like the recent one of fenders and typefaces spoke so
-            strongly to me, not just because the type subject, but also because
-            I’m a guitarist and a big lover of great-weird analogies. The world
-            is so much related itself and I love when one realizes that and then
-            just wanna speak and share thoughts about it.
+            Those threads are so cool! I loved the recent one of fenders and
+            typefaces, not just because the type subject, but also because I’m a
+            guitarist and a big lover of great-weird analogies. The world is so
+            much related itself and I love when one realizes that and then just
+            wanna speak and share thoughts about it.
             <br />
             <br />
             The thing is that I feel that peculiarity of human touch on those
@@ -339,7 +331,7 @@ export default function Home() {
           </p>
           <h4 className={s.subtitle}>My journey with typography.</h4>
           <p>
-            I’ve been wondering so many years if I can find a place where I can
+            I’ve been wondering if there would be a place where I could
             integrate all the things that makes a sense around interdisciplinary
             fields where I live and breathe.
             <br />
@@ -347,7 +339,7 @@ export default function Home() {
             I love everything about interpolation, textures, composition,
             systems, orchestation, rhythm... it doesn’t matter in what
             discipline. But I’m thinking that typography is getting around so
-            many places I love and where I find so much fun. I just can’t stop
+            many places I love and where I find so much fun. I can’t stop
             feeling things when some wild letters appear in my field of view.
             And I wanna more of this thing!
             <br />
@@ -364,27 +356,27 @@ export default function Home() {
             <br />
             <br />
             The thing is that going through the rabbit hole of typography
-            theory, history, evolution and all the tech behind it—and then also
-            building some begginer-friendly typefaces myself—is changing
+            theory, history, evolution, all the tech behind it—and then also
+            building some begginer-friendly typefaces myself— its changing
             completely my view on everything related to design and
             communication. The Lettermatic website and the twitter threads
             helped me a lot on this projects. It’s difficult to find type
-            related content that explains so subtle things that we can encounter
-            through a complex system like Parclo, to put an example.
+            related content that explains so subtle things that we can find in a
+            beautifuly complex system like SoDo Sans, to put an example.
             <br />
             <br />
             So I wanna be more involved on this amazing world of characters, and
-            I think this is a great oportunity for me. All the things I’ve
-            writen here made me think a lot, anyway. I hope this helped you to
-            know me the best from this very first moment.
+            I think this is a great oportunity for me. Just having a feedback
+            about my work and being in touch with you will be very valuable for
+            me. I hope you liked it.
           </p>
           <div id="colophon" className={s.content}></div>
-          <h3 className={s.title} id="colophon">
+          <h3 className={s.title} id="colophon" style={{ opacity: '0.5' }}>
             Colophon.{' '}
           </h3>{' '}
           <br />
           <br />
-          <p>
+          <p className="serif">
             If you have read this far I’m very-very-grateful. Even if there
             isn’t a fit for the job, I’m here to know people and I’ll be amazed
             if all of this just make us to share some thoughts.
@@ -401,9 +393,12 @@ export default function Home() {
             development stack compounds Next.js and Vercel; with React Three
             Fiber and Three.js (paper and visual effects).
             <br />
-            (I don’t have time to test it on every device and making it
-            accessible as a real project should be. I hope it works as intended
-            and I apreciate if you visit it on desktop for the full experience).
+            <span className="serifi">
+              (I don’t have time to test it on every device and making it
+              accessible as a real project should be. I hope it works as
+              intended and I apreciate if you visit it on desktop for the full
+              experience).
+            </span>
           </p>
         </div>
 

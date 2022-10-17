@@ -28,6 +28,9 @@ $intro-duration: 2050ms;
   .disc {
     font-size: 18px;
     color: red;
+    @include desktop {
+      display: none;
+    }
   }
 
   .intro {
