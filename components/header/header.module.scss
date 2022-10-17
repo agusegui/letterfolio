@@ -43,8 +43,43 @@
     .right {
       position: relative;
       text-align: right;
+      display: flex;
+      flex-direction: column;
 
-      .chapters {
+      // transform: translate(0, 0, 0);
+      a {
+        overflow: hidden;
+        transition: opacity,
+          transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      &:hover {
+        a {
+          transform: translate3d(0, -100%, 0);
+          opacity: 0;
+        }
+        .mail {
+          opacity: 1;
+        }
+      }
+
+      .mail {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 24px;
+        // font-family: 'Parclo Sans';
+        font-weight: 400;
+        transition: opacity 300ms ease-in-out;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        .click {
+          font-size: 16px;
+          font-weight: 700;
+
+          color: rgb(126, 179, 76);
+        }
       }
     }
   }

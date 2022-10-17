@@ -1,11 +1,11 @@
 import cn from 'clsx'
 import { Link } from 'components/link'
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import s from './header.module.scss'
 
-// const LTTR = dynamic(() => import('../../svg/letterlogo.svg'), { ssr: false })
-
 export const Header = forwardRef((_, ref) => {
+  const [copySuccess, setCopySuccess] = useState('')
+
   return (
     <header className={s.header} ref={ref}>
       <div className={cn('lb', s.head)}>
@@ -30,7 +30,18 @@ export const Header = forwardRef((_, ref) => {
           <Link href="/">Agustín Seguí</Link>
         </div>
         <div className={s.right}>
-          <Link href="mailto:agugalgui@gmail.com">Contact Me</Link>
+          <a>Contact Me</a>
+
+          <button
+            className={s.mail}
+            onClick={() => {
+              navigator.clipboard.writeText('Copy this text to clipboard')
+              setCopySuccess('Copied to clipboard!')
+            }}
+          >
+            agugalgui@gmail.com
+            <span className={s.click}>{copySuccess}</span>
+          </button>
         </div>
       </div>
     </header>
