@@ -251,7 +251,7 @@ varying vec3 vNormal;
 
 void main() {
     
-    gl_FragColor = vec4(0.,0., 0., 1.);
+    gl_FragColor = vec4(uStartColor, 1.);
   }
 `
 
@@ -275,7 +275,7 @@ export function Demo({ tl, speed = 1 }) {
       uResolution: {
         value: new Vector2(width, height),
       },
-      uStartColor: { value: new Color('#CA1AC5') },
+      uStartColor: { value: new Color('#111111') },
       uEndColor: { value: new Color('#D08FD3') },
       uSat: { value: 1.0 },
       uLig: { value: 0.5 },

@@ -6,7 +6,7 @@ $intro-out: 1500ms;
 .wrapper {
   height: 100vh;
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--black);
   position: fixed;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@ $intro-out: 1500ms;
     padding: desktop-vw(0px) desktop-vw(0px);
 
     transition: transform $intro-out var(--ease-out-expo);
-    transform: translate3d(0, desktop-vh(1100px), 0);
+    transform: translate3d(0, -50%, 0);
     transition-delay: calc($intro-in + 0ms);
 
     height: 100%;

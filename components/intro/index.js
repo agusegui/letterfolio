@@ -57,7 +57,7 @@ export const Intro = () => {
       }}
     >
       <div className={isLoaded && s.relative}>
-        <LTTR isLoaded={isLoaded} fill={'var(--black)'} />
+        <LTTR isLoaded={isLoaded} fill={'var(--white)'} />
       </div>
     </div>
   )
