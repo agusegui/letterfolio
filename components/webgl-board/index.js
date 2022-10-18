@@ -601,27 +601,6 @@ function Board() {
 
 export function WebGLBoard() {
   const tl = gsap.timeline()
-  useLayoutEffect(() => {
-    tl.to(
-      '.cha',
-      {
-        yPercent: -100,
-        duration: 1,
-        stagger: 0.03,
-        ease: 'Expo.easeOut',
-      },
-      2
-    ).to(
-      '.cha',
-      {
-        yPercent: -200,
-        duration: 1,
-        stagger: 0.04,
-        ease: 'Expo.easeIn',
-      },
-      3
-    )
-  }, [])
 
   return (
     <Canvas camera={{ position: [0, 0, 2], fov: 35 }}>

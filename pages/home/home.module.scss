@@ -101,8 +101,8 @@ $intro-duration: 2050ms;
   }
 
   .gl {
-    width: 100%;
-    height: 100vh;
+    // width: 100%;
+    // height: 100%;
     position: fixed;
     inset: 0;
     pointer-events: none;
@@ -113,10 +113,10 @@ $intro-duration: 2050ms;
     }
 
     .canvas {
-      position: fixed;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
+      // position: fixed;
+      // z-index: 0;
+      // width: 100%;
+      // height: 100%;
     }
   }
 }
