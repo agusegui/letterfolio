@@ -1,11 +1,23 @@
 @import 'styles/_functions';
 
 .footer {
+  font-family: 'Parclo Sans';
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  // gap: desktop-vw(40px);
   color: var(--theme-secondary);
   background-color: var(--theme-primary);
   padding: mobile-vw(20px) 0;
+  z-index: 999;
+  @include mobile {
+    // gap: 24px;
+
+    padding: 48px 24px;
+    font-size: 18px;
+  }
 
   @include desktop {
-    padding: desktop-vw(40px) 0;
+    padding: desktop-vw(96px) desktop-vw(192px);
   }
 }

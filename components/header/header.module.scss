@@ -23,7 +23,7 @@
   }
   @include mobile {
     padding: 24px;
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .head {
@@ -45,6 +45,10 @@
       text-align: right;
       display: flex;
       flex-direction: column;
+
+      @include mobile {
+        display: none;
+      }
 
       // transform: translate(0, 0, 0);
       a {
