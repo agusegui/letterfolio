@@ -26,7 +26,7 @@ export default function Home() {
         <div id="hom" className={s.intro}>
           <p>
             Hey Lettermatic team! Greetings from Europe! I’m grateful to be in
-            contact with you on such an amazing oportunity!
+            contact with you on such an amazing opportunity!
           </p>
           <br />
           <p>Welcome to my Letterfolio. My name is Agu.</p>
@@ -261,7 +261,7 @@ export default function Home() {
           <p>
             Well, maybe these are already many things and I don’t pretend that
             we are going to make all of it at the same time. I’m already glad to
-            have the oportunity to think broadly here and then going further
+            have the opportunity to think broadly here and then going further
             step by step. I’m just looking in to my potential and experiences to
             share the things I think can help the most to distribute some
             concepts of the brand.
@@ -314,7 +314,7 @@ export default function Home() {
             <br />
             While I’m falling in love with type related possibilities—both, in
             print and web canvases—I was wondering if there could be an
-            oportunity to work with typography without being a formal
+            opportunity to work with typography without being a formal
             typographer. I love drawing letters, especially geometric styles
             that looks cool with transformations and distortion. I don’t know if
             I could start a foundry some day. Actually, right now I can’t afford
@@ -333,7 +333,7 @@ export default function Home() {
             <br />
             <br />
             So I wanna be more involved on this amazing world of characters and
-            I think this is a great oportunity for me. Just having a feedback
+            I think this is a great opportunity for me. Just having a feedback
             about my work and being in touch with you will be very valuable for
             me. I hope you like it.
             <br />

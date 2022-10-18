@@ -7,7 +7,7 @@ $intro-duration: 2050ms;
   padding-top: 572px;
 
   position: relative;
-  left: 672px;
+  left: desktop-vw(672px);
   width: 100%;
 
   @include mobile {

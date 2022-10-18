@@ -2,13 +2,19 @@
 
 .footer {
   font-family: 'Parclo Sans';
-  font-size: 24px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
   color: var(--theme-secondary);
   // background-color: var(--theme-primary);
   padding: mobile-vw(20px) 0;
   z-index: 999;
+
+  .left {
+    display: flex;
+    gap: desktop-vw(24px);
+  }
+
   @include mobile {
     padding: 48px 24px;
     font-size: 18px;

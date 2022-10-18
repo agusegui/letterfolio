@@ -4,9 +4,10 @@ import s from './footer.module.scss'
 export const Footer = () => {
   return (
     <footer className={s.footer}>
-      <p>agugalgui@gmail.com</p>
-      {/* <Link href="/contact">contact</Link> */}
-      <Link href="https://twitter.com/agusegui">Twitter</Link>
+      <div className={s.left}>
+        <p>agugalgui@gmail.com</p>
+        <Link href="https://twitter.com/agusegui">Twitter</Link>
+      </div>
       <p>2022</p>
     </footer>
   )
