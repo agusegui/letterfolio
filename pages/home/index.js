@@ -274,7 +274,7 @@ export default function Home() {
         </div>
         <div id="why" className={s.content}>
           <h3 className={s.title}>Why I’m here </h3>
-          <h4 className={s.subtitle}>The threads of Rylei.</h4>
+          <h4 className={s.subtitle}>The threads of Riley.</h4>
           <p>
             I know you worked with Studio Freight and Basement Studio. Great
             people, excelent profesionals. I would love to work with them one
@@ -282,7 +282,7 @@ export default function Home() {
             <br />
             <br />
             I’ve been introduced on Lettermatic through Franco Arza who
-            retweeted one of the amazing threads that Rylei shares in Twitter.
+            retweeted one of the amazing threads that Riley shares in Twitter.
             He said that working with you was an amazing experience because your
             knowledge and passion. I got engaged with your content from that
             time and it helps me a lot to dive deeper in the subtle details of
