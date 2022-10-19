@@ -13,9 +13,9 @@ $intro-out: 1500ms;
   z-index: 1000;
   overflow: hidden;
 
-  @include mobile {
-    display: none;
-  }
+  // @include mobile {
+  //   display: none;
+  // }
 
   &.out {
     transition: transform $intro-out var(--ease-out-expo);
